@@ -7,5 +7,4 @@ require_once('controllers/Index.php');
 require_once('config/utilities.php');
 
 /** Load routes and routes Handler */
-require_once('app/routes.php');
 require_once('app/routesHandler.php');

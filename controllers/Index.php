@@ -17,4 +17,11 @@ class Index
         // load about
         view('about', []);
     }
+
+    public function test(int $id)
+    {
+        view('testId', [
+            'id' => $id
+        ]);
+    }
 }
