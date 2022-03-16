@@ -8,8 +8,11 @@ $potentialId = -1;
 $currentRoute = 0;
 
 for ($i = 0; $i < count($router); $i++) {
+    $routeName = $router[$i][0];
+    $routeParameters = $router[$i][1];
+
     /* Vérification id ? */
-    if (str_contains($router[$i][0], '{id}')) {
+    if (str_contains($routeName, '{id}')) {
         $explodedString = explode('/', $_SERVER['REQUEST_URI']);
         $potentialId = end($explodedString);
 
@@ -20,10 +23,14 @@ for ($i = 0; $i < count($router); $i++) {
         }
     }
 
-    /* Vérification de la route */
-    if ($router[$i][0] == $_SERVER['REQUEST_URI']) {
-        $currentRoute = $router[$i];
-        break;
+    /* Vérification de la route et de la méthode */
+    if ($routeName == $_SERVER['REQUEST_URI']) {
+        $requestedMethod = $routeParameters['method'];
+
+        if ($_SERVER['REQUEST_METHOD'] == strtoupper($requestedMethod)) {
+            $currentRoute = $router[$i];
+            break;
+        }
     }
 }
 
