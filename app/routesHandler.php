@@ -4,6 +4,11 @@ use Controllers\RouteError;
 
 require_once('routes.php');
 
+/**
+ * Ce fichier compare l'ensemble des routes à la page couramment exécuté
+ * Si la page couramment éxécuté correspond à l'une des routes alors on on appelle le controleur correspondant.
+ */
+
 $potentialId = -1;
 $currentRoute = 0;
 

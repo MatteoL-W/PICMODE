@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Ce fichier recense toutes les routes et son controleur associé.
+ */
+
 $router = [];
 
 array_push($router, ['/', ['controller' => 'Index', 'action' => 'home', 'method' => 'get']]);
