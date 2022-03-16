@@ -1,6 +1,7 @@
 <?php
 
 /** Load Controllers / ToDo: faire plus clean */
+require_once('controllers/RouteError.php');
 require_once('controllers/Index.php');
 
 /** Load view function */

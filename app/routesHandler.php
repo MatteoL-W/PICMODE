@@ -1,8 +1,11 @@
 <?php
 
+use Controllers\RouteError;
+
 require_once('routes.php');
 
 $potentialId = -1;
+$currentRoute = 0;
 
 for ($i = 0; $i < count($router); $i++) {
     /* Vérification id ? */
@@ -38,6 +41,14 @@ if ($currentRoute) {
             } else {
                 call_user_func_array([$controller, $actionString], ['id' => $potentialId]);
             }
+        } else {
+            // ToDo erreur
         }
     }
+    else
+    {
+        // ToDo erreur
+    }
+} else {
+    call_user_func_array([RouteError::class, "error404"], []);
 }
