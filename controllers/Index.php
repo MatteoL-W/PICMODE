@@ -7,7 +7,7 @@ class Index
     public function home()
     {
         // load home
-        view('home', [
+        view('index/home', [
             'nom' => 'matteo'
         ]);
     }
@@ -15,12 +15,12 @@ class Index
     public function about()
     {
         // load about
-        view('about', []);
+        view('index/about', []);
     }
 
     public function test(int $id)
     {
-        view('testId', [
+        view('index/testId', [
             'id' => $id
         ]);
     }

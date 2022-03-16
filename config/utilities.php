@@ -10,7 +10,6 @@ function view(string $view, array $data = []) : void
         }
         require_once $file;
     } else {
-        // View does not exist
-        die('<h1> 404 Page not found </h1>');
+        die('<h1>Fichier php de la vue inexistant</h1>');
     }
 }
