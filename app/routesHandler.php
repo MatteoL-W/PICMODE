@@ -12,6 +12,7 @@ for ($i = 0; $i < count($router); $i++) {
     $routeParameters = $router[$i][1];
 
     /* Vérification id ? */
+    // ToDo : Verifier les caractères illégaux de request_uri
     if (str_contains($routeName, '{id}')) {
         $explodedString = explode('/', $_SERVER['REQUEST_URI']);
         $potentialId = end($explodedString);

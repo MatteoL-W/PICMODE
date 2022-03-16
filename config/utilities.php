@@ -2,7 +2,7 @@
 
 function view(string $view, array $data = []) : void
 {
-    $file = dirname(__FILE__, 2) . '/views/' . $view . '.php';
+    $file = APP_ROOT . '/views/' . $view . '.php';
 
     if (is_readable($file)) {
         foreach ($data as $key => $value) {
