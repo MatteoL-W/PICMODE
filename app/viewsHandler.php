@@ -14,9 +14,9 @@ function view(string $view, array $data = []) : void
             $$key = $value;
         }
 
-        include('views/includes/header.php');
+        include(APP_ROOT . '/views/includes/header.php');
         require_once $file;
-        include('views/includes/footer.php');
+        include(APP_ROOT . '/views/includes/footer.php');
 
     } else {
         die('<h1>Fichier php de la vue inexistant</h1>');
