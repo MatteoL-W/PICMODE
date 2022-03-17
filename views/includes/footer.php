@@ -1,4 +1,2 @@
-<?php
-?>
-
-footer
+</body>
+</html>

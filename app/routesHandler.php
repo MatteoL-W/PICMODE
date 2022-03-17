@@ -30,7 +30,7 @@ for ($i = 0; $i < count($router); $i++) {
     }
 
     /* Vérification de la route et de la méthode */
-    if ($routeName == $_SERVER['REQUEST_URI']) {
+    if ('/S2_PHP' . $routeName == $_SERVER['REQUEST_URI']) {
         $requestedMethod = $routeParameters['method'];
 
         if ($_SERVER['REQUEST_METHOD'] == strtoupper($requestedMethod)) {
@@ -57,9 +57,7 @@ if ($currentRoute) {
         } else {
             // ToDo erreur
         }
-    }
-    else
-    {
+    } else {
         // ToDo erreur
     }
 } else {
