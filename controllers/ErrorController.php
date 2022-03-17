@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class RouteError
+class ErrorController
 {
     static public function error404()
     {

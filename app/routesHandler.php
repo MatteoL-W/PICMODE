@@ -1,6 +1,6 @@
 <?php
 
-use Controllers\RouteError;
+use Controllers\ErrorController;
 
 require_once('routes.php');
 
@@ -41,7 +41,7 @@ for ($i = 0; $i < count($router); $i++) {
 }
 
 if ($currentRoute) {
-    $controller = '\\Controllers\\' . $currentRoute[1]['controller'];
+    $controller = '\\Controllers\\' . $currentRoute[1]['controller'] . 'Controller';
     $actionString = $currentRoute[1]['action'];
 
     //ToDo: Handle broken links
@@ -63,5 +63,5 @@ if ($currentRoute) {
         // ToDo erreur
     }
 } else {
-    call_user_func_array([RouteError::class, "error404"], []);
+    call_user_func_array([ErrorController::class, "error404"], []);
 }
