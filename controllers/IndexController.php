@@ -2,13 +2,16 @@
 
 namespace Controllers;
 
-use Models\Database;
+use Models\Example;
 
 class IndexController
 {
     public function home()
     {
         // load home
+
+        $example = new Example;
+        var_dump($example->selectAll());
 
         view('index/home', [
             'nom' => 'matteo'
