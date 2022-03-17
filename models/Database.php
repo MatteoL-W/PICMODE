@@ -35,4 +35,60 @@ class Database
             die(1);
         }
     }
+
+    /**
+     * @brief Effectuer la requête SQL
+     * @param string $sql_query
+     */
+    public function query(string $sql_query) : void
+    {
+        $this->statement = $this->db_handler->prepare($sql_query);
+    }
+
+    /**
+     * @brief Bind la valeur inconnue si nécessaire
+     * @param string $parameter
+     * @param string $value
+     */
+    public function bind(string $parameter, string $value): void
+    {
+        $type = match (true) {
+            is_int($value) => PDO::PARAM_INT,
+            is_bool($value) => PDO::PARAM_BOOL,
+            is_null($value) => PDO::PARAM_NULL,
+            default => PDO::PARAM_STR,
+        };
+
+        $this->statement->bindValue($parameter, $value, $type);
+    }
+
+    /**
+     * @brief Executer la requête
+     * @return mixed
+     */
+    public function execute(): mixed
+    {
+        return $this->statement->execute();
+    }
+
+    /**
+     * @brief Obtenir la réponse sous forme de tableau d'objets
+     * @return mixed
+     */
+    public function fetchAll(): mixed
+    {
+        $this->execute();
+        return $this->statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    /**
+     * @brief Obtenir la réponse sous forme d'un seul objet
+     * @return mixed
+     */
+    public function fetch(): mixed
+    {
+        $this->execute();
+        return $this->statement->fetch(PDO::FETCH_OBJ);
+    }
+
 }

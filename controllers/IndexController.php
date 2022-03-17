@@ -9,7 +9,7 @@ class IndexController
     public function home()
     {
         // load home
-        $db = new Database();
+
         view('index/home', [
             'nom' => 'matteo'
         ]);
