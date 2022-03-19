@@ -18,7 +18,6 @@ class Example
         $this->db->bind(":description", $description);
 
         if ($this->db->execute()) {
-            var_dump("c'est créer");
             return true;
         }
 
