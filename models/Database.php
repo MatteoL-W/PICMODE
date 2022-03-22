@@ -41,7 +41,7 @@ class Database
      * @brief Effectuer la requête SQL
      * @param string $sql_query
      */
-    public function query(string $sql_query) : void
+    public function query(string $sql_query): void
     {
         $this->statement = $this->db_handler->prepare($sql_query);
     }
@@ -64,15 +64,6 @@ class Database
     }
 
     /**
-     * @brief Executer la requête
-     * @return mixed
-     */
-    public function execute(): mixed
-    {
-        return $this->statement->execute();
-    }
-
-    /**
      * @brief Obtenir la réponse sous forme de tableau d'objets
      * @return mixed
      */
@@ -80,6 +71,15 @@ class Database
     {
         $this->execute();
         return $this->statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    /**
+     * @brief Executer la requête
+     * @return mixed
+     */
+    public function execute(): mixed
+    {
+        return $this->statement->execute();
     }
 
     /**

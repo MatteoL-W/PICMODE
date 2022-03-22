@@ -5,7 +5,7 @@
  * @param string $view
  * @param array $data
  */
-function view(string $view, array $data = []) : void
+function view(string $view, array $data = []): void
 {
     $file = APP_ROOT . '/views/' . $view . '.php';
 

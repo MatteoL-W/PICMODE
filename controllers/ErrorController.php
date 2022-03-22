@@ -8,4 +8,9 @@ class ErrorController
     {
         view('error/error404', []);
     }
+
+    static public function errorController()
+    {
+        echo "erreur de controlleur";
+    }
 }

@@ -24,7 +24,7 @@ class Example
         return false;
     }
 
-    public function selectAll() : array
+    public function selectAll(): array
     {
         $this->db->query("SELECT * FROM example");
         return $this->db->fetchAll();

@@ -2,6 +2,10 @@
 
 use Controllers\ErrorController;
 
+$router = [];
+$currentRoute = 0;
+$id = -1;
+
 require_once('routes.php');
 
 /**
@@ -9,9 +13,7 @@ require_once('routes.php');
  * Si la page couramment éxécuté correspond à l'une des routes alors on on appelle le controleur correspondant.
  */
 
-$currentRoute = 0;
-$id = -1;
-
+// Redefine the access URI
 $uriAccess = explode('/', $_SERVER['REQUEST_URI']);
 
 if ($uriAccess[count($uriAccess) - 1] != '') {
@@ -23,6 +25,7 @@ if (is_numeric($uriAccess[count($uriAccess) - 2])) {
     $uriAccess[count($uriAccess) - 2] = '{id}';
 }
 
+// Get the current route
 for ($i = 0; $i < count($router); $i++) {
     $realUriAccess = implode('/', $uriAccess);
     $routeName = FOLDER_ACCESS . $router[$i][0];
@@ -40,25 +43,25 @@ for ($i = 0; $i < count($router); $i++) {
 
 }
 
+// Call the right controller if the route is defined
 if ($currentRoute) {
     $controller = '\\Controllers\\' . $currentRoute[1]['controller'] . 'Controller';
-    $actionString = $currentRoute[1]['action'];
+    $method = $currentRoute[1]['action'];
 
-    //ToDo: Handle broken links
     if (class_exists($controller)) {
         $controller = new $controller;
 
-        if (is_callable([$controller, $actionString])) {
+        if (is_callable([$controller, $method])) {
             if ($id == -1) {
-                call_user_func_array([$controller, $actionString], []);
+                call_user_func_array([$controller, $method], []);
             } else {
-                call_user_func_array([$controller, $actionString], ['id' => $id]);
+                call_user_func_array([$controller, $method], ['id' => $id]);
             }
         } else {
-            // ToDo erreur
+            call_user_func_array([ErrorController::class, "errorController"], []);
         }
     } else {
-        // ToDo erreur
+        call_user_func_array([ErrorController::class, "errorController"], []);
     }
 } else {
     call_user_func_array([ErrorController::class, "error404"], []);
