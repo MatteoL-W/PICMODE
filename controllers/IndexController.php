@@ -9,9 +9,6 @@ class IndexController
     public function home()
     {
         // load home
-
-        $example = new Example;
-
         view('index/home', [
             'nom' => 'matteo'
         ]);
@@ -25,8 +22,9 @@ class IndexController
 
     public function test(int $id)
     {
-        view('index/testId', [
-            'id' => $id
-        ]);
+        $example = new Example;
+        $example = $example->selectAll();
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($example);
     }
 }
