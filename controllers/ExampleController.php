@@ -2,40 +2,47 @@
 
 namespace Controllers;
 
+use Models\Example;
+
 class ExampleController
 {
-    public function create() {
-        var_dump("get");
-        //view('example/create', []);
+    private Example $example;
+
+    public function __construct()
+    {
+        $this->example = new Example;
     }
 
-    public function create_treatment() {
-        var_dump("post");
+    public function create(): bool
+    {
+        $data = json_decode(file_get_contents("php://input"));
+        if (isset($data->name, $data->description)
+            && is_string($data->name) && is_string($data->description)) {
+            return $this->example->create($data->name, $data->description);
+        } else {
+            return false;
+        }
+
     }
 
-    public function update(int $id) {
-        var_dump("get");
-        //view('example/update', []);
+    public function read(int $id = -1)
+    {
+        if ($id === -1) {
+            $example = $this->example->selectAll();
+        } else {
+            $example = $this->example->select($id);
+        }
+
+        return_json(json_encode($example));
     }
 
-    public function update_treatment(int $id) {
-        var_dump("post");
-        //view('example/update', []);
+    public function update(int $id)
+    {
+        var_dump("put");
     }
 
-    public function delete(int $id) {
-        var_dump("get");
-        //view('example/delete', []);
-    }
-
-    public function delete_treatment(int $id) {
-        var_dump("post");
-        //view('example/delete', []);
-    }
-
-
-    public function read() {
-        var_dump("read");
-        //view('example/read', []);
+    public function delete(int $id): bool
+    {
+        return $this->example->delete($id);
     }
 }

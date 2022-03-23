@@ -30,7 +30,14 @@ class Example
         return $this->db->fetchAll();
     }
 
-    public function delete($id): bool
+    public function select(int $id)
+    {
+        $this->db->query("SELECT * FROM example WHERE id = :id");
+        $this->db->bind(':id', $id);
+        return $this->db->fetch();
+    }
+
+    public function delete(int $id): bool
     {
         $this->db->query("DELETE FROM example WHERE id = :id");
         $this->db->bind(':id', $id);

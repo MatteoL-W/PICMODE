@@ -8,7 +8,7 @@ class IndexController
 {
     public function home()
     {
-        view('index/home', [
+        return_view('index/home', [
             'nom' => 'matteo'
         ]);
     }
@@ -16,14 +16,13 @@ class IndexController
     public function about()
     {
         // load about
-        view('index/about', []);
+        return_view('index/about', []);
     }
 
     public function test(int $id)
     {
         $example = new Example;
         $example = $example->selectAll();
-        header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($example);
+        return_json(json_encode($example));
     }
 }

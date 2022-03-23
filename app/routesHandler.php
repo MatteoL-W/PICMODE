@@ -12,6 +12,7 @@ $currentRoute = 0;
 $id = -1;
 
 require_once('routes.php');
+
 // Redefine the access URI
 $uriAccess = explode('/', $_SERVER['REQUEST_URI']);
 
@@ -37,9 +38,7 @@ for ($i = 0; $i < count($router); $i++) {
             $currentRoute = $router[$i];
             break;
         }
-
     }
-
 }
 
 // Call the right controller if the route is defined
@@ -59,6 +58,7 @@ if ($currentRoute) {
         } else {
             call_user_func_array([ErrorController::class, "errorController"], []);
         }
+
     } else {
         call_user_func_array([ErrorController::class, "errorController"], []);
     }
