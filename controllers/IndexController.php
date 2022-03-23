@@ -8,7 +8,6 @@ class IndexController
 {
     public function home()
     {
-        // load home
         view('index/home', [
             'nom' => 'matteo'
         ]);

@@ -2,17 +2,16 @@
 
 use Controllers\ErrorController;
 
-$router = [];
-$currentRoute = 0;
-$id = -1;
-
-require_once('routes.php');
-
 /**
  * Ce fichier compare l'ensemble des routes à la page couramment exécuté
  * Si la page couramment éxécuté correspond à l'une des routes alors on on appelle le controleur correspondant.
  */
 
+$router = [];
+$currentRoute = 0;
+$id = -1;
+
+require_once('routes.php');
 // Redefine the access URI
 $uriAccess = explode('/', $_SERVER['REQUEST_URI']);
 
