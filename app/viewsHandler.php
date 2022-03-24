@@ -5,7 +5,7 @@
  * @param string $view
  * @param array $data
  */
-function view(string $view, array $data = []): void
+function return_view(string $view, array $data = []): void
 {
     $file = APP_ROOT . '/views/' . $view . '.php';
 
@@ -21,4 +21,10 @@ function view(string $view, array $data = []): void
     } else {
         die('<h1>Fichier php de la vue inexistant</h1>');
     }
+}
+
+function return_json($json)
+{
+    header('Content-Type: application/json; charset=utf-8');
+    echo $json;
 }

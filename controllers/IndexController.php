@@ -6,25 +6,23 @@ use Models\Example;
 
 class IndexController
 {
-    public function home()
+    public function index($router)
     {
-        // load home
-        view('index/home', [
-            'nom' => 'matteo'
+        return_view('index/home', [
+            'routes' => $router
         ]);
     }
 
     public function about()
     {
         // load about
-        view('index/about', []);
+        return_view('index/about', []);
     }
 
     public function test(int $id)
     {
         $example = new Example;
         $example = $example->selectAll();
-        header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($example);
+        return_json(json_encode($example));
     }
 }
