@@ -1,6 +1,7 @@
 <?php
 
 use Controllers\ErrorController;
+use Controllers\IndexController;
 
 /**
  * Ce fichier compare l'ensemble des routes à la page couramment exécuté
@@ -43,6 +44,7 @@ for ($i = 0; $i < count($router); $i++) {
 
 // Call the right controller if the route is defined
 if ($currentRoute) {
+    $data = [];
     $controller = '\\Controllers\\' . $currentRoute[1]['controller'] . 'Controller';
     $method = $currentRoute[1]['action'];
 
@@ -50,11 +52,16 @@ if ($currentRoute) {
         $controller = new $controller;
 
         if (is_callable([$controller, $method])) {
-            if ($id == -1) {
-                call_user_func_array([$controller, $method], []);
-            } else {
-                call_user_func_array([$controller, $method], ['id' => $id]);
+            if ($currentRoute[1]['controller'] === 'Index' && $method === 'index') {
+                $data['router'] = $router;
             }
+
+            if ($id != -1) {
+                $data['id'] = $id;
+            }
+
+            call_user_func_array([$controller, $method], $data);
+
         } else {
             call_user_func_array([ErrorController::class, "errorController"], []);
         }

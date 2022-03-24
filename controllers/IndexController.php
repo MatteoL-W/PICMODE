@@ -6,10 +6,10 @@ use Models\Example;
 
 class IndexController
 {
-    public function home()
+    public function index($router)
     {
         return_view('index/home', [
-            'nom' => 'cyb0rg'
+            'routes' => $router
         ]);
     }
 
