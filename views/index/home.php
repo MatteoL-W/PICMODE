@@ -4,14 +4,15 @@
     window.addEventListener('DOMContentLoaded', () => {
         const url = 'http://localhost/S2_PHP/example';
 
-        let data = {
+        /*let data = {
             name: 'Sara',
             description: 'test',
-        }
+        }*/
 
         let request = new Request(url, {
-            method: 'POST',
-            body: JSON.stringify(data),
+            //method: 'POST',
+            method: 'GET',
+            //body: JSON.stringify(data),
             headers: new Headers()
         });
 
@@ -20,7 +21,6 @@
                 response.text().then(data => {
                     console.log(data)
                 })
-                console.log(response)
             })
             .catch(error => {
                 console.log(error)

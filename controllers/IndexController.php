@@ -9,7 +9,7 @@ class IndexController
     public function home()
     {
         return_view('index/home', [
-            'nom' => 'matteo'
+            'nom' => 'cyb0rg'
         ]);
     }
 

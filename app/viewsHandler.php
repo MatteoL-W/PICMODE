@@ -23,7 +23,8 @@ function return_view(string $view, array $data = []): void
     }
 }
 
-function return_json($json) {
+function return_json($json)
+{
     header('Content-Type: application/json; charset=utf-8');
     echo $json;
 }

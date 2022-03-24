@@ -16,6 +16,7 @@ class ExampleController
     public function create(): bool
     {
         $data = json_decode(file_get_contents("php://input"));
+
         if (isset($data->name, $data->description)
             && is_string($data->name) && is_string($data->description)) {
             return $this->example->create($data->name, $data->description);
