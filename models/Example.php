@@ -2,6 +2,8 @@
 
 namespace Models;
 
+use stdClass;
+
 class Example
 {
     private Database $db;
@@ -41,9 +43,34 @@ class Example
     {
         $this->db->query("DELETE FROM example WHERE id = :id");
         $this->db->bind(':id', $id);
+
         if ($this->db->execute()) {
             return true;
         }
+
+        return false;
+    }
+
+    public function update(int $id, stdClass $fields): bool
+    {
+        $setValue = '';
+        $i = 0;
+
+        foreach ($fields as $name => $value) {
+            $setValue .= "{$name} = '{$value}'";
+            if ($i < count((array)$fields) - 1) {
+                $setValue .= ', ';
+            }
+            $i++;
+        }
+
+        $this->db->query("UPDATE example SET $setValue WHERE id = :id");
+        $this->db->bind(':id', $id);
+
+        if ($this->db->execute()) {
+            return true;
+        }
+
         return false;
     }
 }

@@ -13,20 +13,7 @@ class ExampleController
         $this->example = new Example;
     }
 
-    public function create(): bool
-    {
-        $data = json_decode(file_get_contents("php://input"));
-
-        if (isset($data->name, $data->description)
-            && is_string($data->name) && is_string($data->description)) {
-            return $this->example->create($data->name, $data->description);
-        } else {
-            return false;
-        }
-
-    }
-
-    public function read(int $id = -1)
+    public function read(int $id = -1): void
     {
         if ($id === -1) {
             $example = $this->example->selectAll();
@@ -37,14 +24,35 @@ class ExampleController
         return_json(json_encode($example));
     }
 
-    public function update(int $id)
+    public function create(): void
     {
-        var_dump("put");
-        // ToDo
+        $data = json_decode(file_get_contents("php://input"));
+
+        if (isset($data->example_name, $data->description)
+            && is_string($data->example_name) && is_string($data->description)) {
+            if (!$this->example->create($data->example_name, $data->description)) {
+                return;
+            }
+        } else {
+            return;
+        }
+
+        ExampleController::read();
     }
 
-    public function delete(int $id): bool
+    public function update(int $id): void
     {
-        return $this->example->delete($id);
+        $data = json_decode(file_get_contents("php://input"));
+
+        if ($this->example->update($id, $data)) {
+            ExampleController::read();
+        }
+    }
+
+    public function delete(int $id): void
+    {
+        if ($this->example->delete($id)) {
+            ExampleController::read();
+        }
     }
 }
