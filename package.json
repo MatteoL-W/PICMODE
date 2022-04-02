@@ -1,0 +1,11 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  },
+  "scripts": {
+    "scss": "node-sass scss -o css",
+    "scss-w": "node-sass --watch scss -o css"
+  }
+}
