@@ -20,7 +20,7 @@ echo $html;
 
 <script>
     window.addEventListener('DOMContentLoaded', () => {
-        const url = 'http://localhost/S2_PHP/example';
+        const url = 'http://localhost/S2_PHP/api/example';
 
         /*let data = {
             name: 'Sara',

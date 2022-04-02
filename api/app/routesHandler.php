@@ -29,7 +29,7 @@ if (is_numeric($uriAccess[count($uriAccess) - 2])) {
 // Get the current route
 for ($i = 0; $i < count($router); $i++) {
     $realUriAccess = implode('/', $uriAccess);
-    $routeName = FOLDER_ACCESS . $router[$i][0];
+    $routeName = API_FOLDER_ACCESS . $router[$i][0];
 
     /* Vérification de la route et de la méthode */
     if ($routeName == $realUriAccess) {

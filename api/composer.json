@@ -19,6 +19,7 @@
     }
   },
   "archive": {
-    "exclude": ["vendor", ".DS_Store", "*.log"]
+    "exclude": [
+      "vendor", ".DS_Store", "*.log"]
   }
 }
