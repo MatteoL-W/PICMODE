@@ -15,4 +15,10 @@ window.addEventListener('DOMContentLoaded', () => {
     }).then(results => {
         console.log(results)
     })*/
+
+    /*fetchPUT('http://localhost/S2_PHP/api/example/3', {
+        example_name: 'Sara_nvellePUT'
+    }).then(results => {
+        console.log(results)
+    })*/
 })
