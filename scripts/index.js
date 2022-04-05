@@ -1,25 +1,14 @@
+import {fetchGET, fetchPOST} from "./modules/fetchTools";
+
 window.addEventListener('DOMContentLoaded', () => {
-    const url = 'http://localhost/S2_PHP/api/example';
+    fetchGET('http://localhost/S2_PHP/api/example').then(results => {
+        console.log(results)
+    })
 
-    /*let data = {
-        name: 'Sara',
-        description: 'test',
-    }*/
-
-    let request = new Request(url, {
-        //method: 'POST',
-        method: 'GET',
-        //body: JSON.stringify(data),
-        headers: new Headers()
-    });
-
-    fetch(request)
-        .then(response => {
-            response.text().then(data => {
-                console.log(data)
-            })
-        })
-        .catch(error => {
-            console.log(error)
-        })
+    fetchPOST('http://localhost/S2_PHP/api/example', {
+        example_name: 'Sara_nvelle',
+        description: 'test_nvelle',
+    }).then(results => {
+        console.log(results)
+    })
 })

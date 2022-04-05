@@ -1,6 +1,8 @@
-$test : red;
+* {
+  box-sizing: border-box;
+}
 
-h1 {
-  color: $test;
-  background: blue;
+html, body {
+  margin: 0;
+  padding: 0;
 }
