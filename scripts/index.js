@@ -1,4 +1,4 @@
-import {fetchDELETE, fetchGET, fetchPOST} from "./modules/fetchTools";
+import {fetchGET} from "./modules/fetchTools";
 
 window.addEventListener('DOMContentLoaded', () => {
     fetchGET('http://localhost/S2_PHP/api/example').then(results => {
@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log(results)
     })*/
 
-    /*fetchPUT('http://localhost/S2_PHP/api/example/3', {
+    /*fetchPUT('http://localhost/S2_PHP/api/example/8', {
         example_name: 'Sara_nvellePUT'
     }).then(results => {
         console.log(results)
