@@ -3,43 +3,37 @@
 ////////////////////
 
 export async function fetchGET(url) {
-    return await fetchSingle(url, 'GET');
+    return await useFetch(url, 'GET');
 }
 
 export async function fetchDELETE(url) {
-    return await fetchSingle(url, 'DELETE');
-}
-
-async function fetchSingle(url, name) {
-    const request = new Request(url, {
-        method: name,
-        headers: new Headers(),
-    });
-
-    const response = await fetch(request);
-    return await response.json();
+    return await useFetch(url, 'DELETE');
 }
 
 ////////////////////
-/* POST AND PUT */
+/*  POST AND PUT  */
 ////////////////////
 
 export async function fetchPOST(url, data) {
-    return await fetchWithData(url, 'POST', data);
+    return await useFetch(url, 'POST', data);
 }
 
 export async function fetchPUT(url, data) {
-    return await fetchWithData(url, 'PUT', data);
+    return await useFetch(url, 'PUT', data);
 }
 
-export async function fetchWithData(url, name, data) {
+////////////////////
+/*  UTILITY FUNC  */
+////////////////////
+
+export async function useFetch(url, name, data = {}) {
     const request = new Request(url, {
         method: name,
         headers: new Headers(),
-        body: JSON.stringify(data)
+        // if body is null
+        body: (Object.keys(data).length === 0 && data.constructor === Object) ?  null : JSON.stringify(data)
     });
 
     const response = await fetch(request);
     return await response.json();
 }
-
