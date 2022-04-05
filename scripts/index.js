@@ -1,23 +1,23 @@
-import {fetchGET} from "./modules/fetchTools";
+import {useFetch} from "./modules/fetchTools";
 
 window.addEventListener('DOMContentLoaded', () => {
-    fetchGET('http://localhost/S2_PHP/api/example').then(results => {
+    useFetch('http://localhost/S2_PHP/api/example', 'GET').then(results => {
         console.log(results)
     })
 
-    /*fetchDELETE('http://localhost/S2_PHP/api/example/7').then(results => {
+    /*useFetch('http://localhost/S2_PHP/api/example/7', 'DELETE').then(results => {
         console.log(results)
-    })*/
+    })
 
-    /*fetchPOST('http://localhost/S2_PHP/api/example', {
+    useFetch('http://localhost/S2_PHP/api/example/', 'POST', {
         example_name: 'Sara_nvelle',
         description: 'test_nvelle',
     }).then(results => {
         console.log(results)
-    })*/
+    })
 
-    /*fetchPUT('http://localhost/S2_PHP/api/example/8', {
-        example_name: 'Sara_nvellePUT'
+    useFetch('http://localhost/S2_PHP/api/example/9', 'PUT', {
+        description: 'Sara_nvellePUT'
     }).then(results => {
         console.log(results)
     })*/
