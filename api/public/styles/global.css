@@ -15,6 +15,37 @@ body {
     margin: 0 auto;
 }
 
+.circle {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #666666;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.circle.get {
+    background: #1c5fff;
+}
+
+.circle.post {
+    background: #20dcba;
+}
+
+.circle.put {
+    background: #ff5d1d;
+}
+
+.circle.delete {
+    background: #f52525;
+}
+
+.flexing {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
 /* Clean Grid CSS by https://gist.github.com/brennowilliam/75f5f910e5ba8fc64279 */
 table a:link {
     color: #666;
@@ -33,6 +64,7 @@ table a:hover {
 }
 
 table {
+    width: 400px;
     font-family:Arial, Helvetica, sans-serif;
     color:#666;
     font-size:12px;
