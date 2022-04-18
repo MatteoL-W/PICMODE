@@ -110,12 +110,11 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pseudo` varchar(20) NOT NULL,
   `mail_address` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `date_of_birth` varchar(20) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `date_of_birth` date NOT NULL,
   `name` varchar(20) NOT NULL,
   `firstname` varchar(20) NOT NULL,
   `profile_picture` text NOT NULL,
-  `nouveau_test` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -123,8 +122,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `pseudo`, `mail_address`, `password`, `date_of_birth`, `name`, `firstname`, `profile_picture`, `nouveau_test`) VALUES
-(1, 'MiamMatt', 'matteo@gmail.com', 'OnePiece', '2001-10-09', 'matteo', 'leclerq', 'photo', 'test');
+INSERT INTO `user` (`id`, `pseudo`, `mail_address`, `password`, `date_of_birth`, `name`, `firstname`, `profile_picture`) VALUES
+(1, 'MiamMatt', 'matteo@gmail.com', 'OnePiece', '2001-10-09', 'matteo', 'leclerq', 'photo');
 
 --
 -- Contraintes pour les tables déchargées
