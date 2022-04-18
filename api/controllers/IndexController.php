@@ -25,4 +25,9 @@ class IndexController
         $example = $example->selectAll();
         return_json(json_encode($example));
     }
+
+    public function test2(int $id, int $id2)
+    {
+        var_dump($id, $id2);
+    }
 }

@@ -11,6 +11,8 @@ use Controllers\IndexController;
 $router = [];
 $currentRoute = 0;
 $id = -1;
+$id2 = -1;
+$isDoubleIdRoute = false;
 
 require_once('routes.php');
 
@@ -21,9 +23,24 @@ if ($uriAccess[count($uriAccess) - 1] != '') {
     $uriAccess[count($uriAccess)] = '';
 }
 
+// Last-1 element of URL
+if (is_numeric($uriAccess[count($uriAccess) - 3])) {
+    $isDoubleIdRoute = true;
+    $id = $uriAccess[count($uriAccess) - 3];
+    $uriAccess[count($uriAccess) - 3] = '{id}';
+}
+
+// Last element of URL
 if (is_numeric($uriAccess[count($uriAccess) - 2])) {
-    $id = $uriAccess[count($uriAccess) - 2];
-    $uriAccess[count($uriAccess) - 2] = '{id}';
+    if ($isDoubleIdRoute) {
+        $id2 = $uriAccess[count($uriAccess) - 2];
+        $uriAccess[count($uriAccess) - 2] = '{id2}';
+    }
+
+    else {
+        $id = $uriAccess[count($uriAccess) - 2];
+        $uriAccess[count($uriAccess) - 2] = '{id}';
+    }
 }
 
 // Get the current route
@@ -58,6 +75,10 @@ if ($currentRoute) {
 
             if ($id != -1) {
                 $data['id'] = $id;
+            }
+
+            if ($id2 != -1) {
+                $data['id2'] = $id2;
             }
 
             call_user_func_array([$controller, $method], $data);
