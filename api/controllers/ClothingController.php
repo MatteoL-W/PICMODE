@@ -37,7 +37,7 @@ class ClothingController
             return;
         }
 
-        ClothingController::read();
+        $this->read();
     }
 
     public function update(int $id): void
@@ -45,14 +45,14 @@ class ClothingController
         $data = json_decode(file_get_contents("php://input"));
 
         if ($this->clothing->update($id, $data)) {
-            ClothingController::read();
+            $this->read();
         }
     }
 
     public function delete(int $id): void
     {
         if ($this->clothing->delete($id)) {
-            ClothingController::read();
+            $this->read();
         }
     }
 }

@@ -52,13 +52,13 @@ class FollowingController
             return;
         }
 
-        FollowingController::read();
+        $this->read();
     }
 
     public function delete(int $id, int $id2): void
     {
         if ($this->following->delete($id, $id2)) {
-            FollowingController::read();
+            $this->read();
         }
     }
 }

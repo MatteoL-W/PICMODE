@@ -40,7 +40,7 @@ class UserController
             return;
         }
 
-        UserController::read();
+        $this->read();
     }
 
     public function update(int $id): void
@@ -48,14 +48,14 @@ class UserController
         $data = json_decode(file_get_contents("php://input"));
 
         if ($this->user->update($id, $data)) {
-            UserController::read();
+            $this->read();
         }
     }
 
     public function delete(int $id): void
     {
         if ($this->user->delete($id)) {
-            UserController::read();
+            $this->read();
         }
     }
 }

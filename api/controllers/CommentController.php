@@ -37,7 +37,7 @@ class CommentController
             return;
         }
 
-        CommentController::read();
+        $this->read();
     }
 
     public function update(int $id): void
@@ -45,14 +45,14 @@ class CommentController
         $data = json_decode(file_get_contents("php://input"));
 
         if ($this->comment->update($id, $data)) {
-            CommentController::read();
+            $this->read();
         }
     }
 
     public function delete(int $id): void
     {
         if ($this->comment->delete($id)) {
-            CommentController::read();
+            $this->read();
         }
     }
 }
