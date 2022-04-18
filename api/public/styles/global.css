@@ -44,6 +44,7 @@ body {
     display: flex;
     align-items: center;
     text-transform: uppercase;
+    height: 80px;
 }
 
 /* Clean Grid CSS by https://gist.github.com/brennowilliam/75f5f910e5ba8fc64279 */
@@ -53,7 +54,7 @@ table a:link {
     text-decoration: none;
 }
 table a:visited {
-    color: #999999;
+    color: #666;
     font-weight: bold;
     text-decoration:none;
 }
@@ -64,7 +65,7 @@ table a:hover {
 }
 
 table {
-    width: 400px;
+    width: 900px;
     font-family:Arial, Helvetica, sans-serif;
     color:#666;
     font-size:12px;
