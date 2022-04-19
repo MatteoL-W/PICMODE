@@ -2,10 +2,12 @@
 
 namespace Models;
 
+use stdClass;
+
 class Following extends BaseModel
 // Méthodes selectAll, select, update, delete dans BaseModel.php
 {
-    public string $entity = 'user';
+    public string $entity = 'following';
 
     public function create(int $idFollower, int $idFollowing): bool
     {
@@ -51,6 +53,12 @@ class Following extends BaseModel
         $this->db->bind(':idFollowing', $idFollowing);
 
         return $this->db->execute();
+    }
+
+    // Update non autorisé
+    public function update(int $id, stdClass $fields): bool
+    {
+        return false;
     }
 
 }

@@ -19,7 +19,7 @@ class BaseModel
         $allValues = '`' . implode("`, `", $keys) . '`';
         $allValuesSQL = ':' . implode(', :', $keys);
 
-        $this->db->query("INSERT INTO user ($allValues) VALUES ($allValuesSQL)");
+        $this->db->query("INSERT INTO " . $this->entity . " ($allValues) VALUES ($allValuesSQL)");
         for ($i = 0; $i < count($keys); $i++) {
             $this->db->bind(':' . $keys[$i], $values[$i]);
         }
