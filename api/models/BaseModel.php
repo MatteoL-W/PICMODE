@@ -20,7 +20,7 @@ class BaseModel
         $allValuesSQL = ':' . implode(', :', $keys);
 
         $this->db->query("INSERT INTO " . $this->entity . " ($allValues) VALUES ($allValuesSQL)");
-        for ($i = 0; $i < count($keys); $i++) {
+        for ($i = 0, $iMax = count($keys); $i < $iMax; $i++) {
             $this->db->bind(':' . $keys[$i], $values[$i]);
         }
 
@@ -57,11 +57,7 @@ class BaseModel
         $this->db->query("UPDATE " . $this->entity . " SET $setValue WHERE id = :id");
         $this->db->bind(':id', $id);
 
-        if ($this->db->execute()) {
-            return true;
-        }
-
-        return false;
+        return $this->db->execute();
     }
 
     public function delete(int $id): bool
@@ -69,10 +65,6 @@ class BaseModel
         $this->db->query("DELETE FROM " . $this->entity . " WHERE id = :id");
         $this->db->bind(':id', $id);
 
-        if ($this->db->execute()) {
-            return true;
-        }
-
-        return false;
+        return $this->db->execute();
     }
 }

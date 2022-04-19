@@ -12,6 +12,6 @@ class User extends BaseModel
         $values = [$pseudo, $mail_address, $password, $date_of_birth, $name, $firstname, $profile_picture];
         $keys = ['pseudo', 'mail_address', 'password', 'date_of_birth', 'name', 'firstname', 'profile_picture'];
 
-        return parent::createFromArray($values, $keys);
+        return $this->createFromArray($values, $keys);
     }
 }

@@ -14,7 +14,7 @@ class Following extends BaseModel
         $values = [$idFollower, $idFollowing];
         $keys = ['idFollower', 'idFollowing'];
 
-        return parent::createFromArray($values, $keys);
+        return $this->createFromArray($values, $keys);
     }
 
     public function selectAllFollowersFromUserId(int $idUser)
