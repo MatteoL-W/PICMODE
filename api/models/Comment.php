@@ -2,16 +2,10 @@
 
 namespace Models;
 
-use stdClass;
-
-class Comment
+class Comment extends BaseModel
 {
-    private Database $db;
 
-    public function __construct()
-    {
-        $this->db = new Database();
-    }
+    public string $entity = 'comment';
 
     public function create(string $text): bool
     {
