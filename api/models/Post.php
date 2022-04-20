@@ -2,16 +2,9 @@
 
 namespace Models;
 
-use stdClass;
-
-class Post
+class Post extends BaseModel
 {
-    private Database $db;
-
-    public function __construct()
-    {
-        $this->db = new Database();
-    }
+   public string $entity = 'post';
 
     public function create(string $description, string $picture, string $date): bool
     {
