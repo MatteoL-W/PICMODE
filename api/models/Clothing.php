@@ -5,7 +5,7 @@ namespace Models;
 class Clothing extends BaseModel
 // Méthodes selectAll, select, update, delete dans BaseModel.php
 {
-    public string $entity = 'user';
+    public string $entity = 'clothing';
 
     public function create(string $type, string $color, string $url_shop, string $style, string $store): bool
     {
