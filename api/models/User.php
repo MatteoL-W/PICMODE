@@ -14,4 +14,21 @@ class User extends BaseModel
 
         return $this->createFromArray($values, $keys);
     }
+
+    public function login(string $pseudo, string $password) : string {
+        $this->db->query("SELECT * FROM user WHERE pseudo=:pseudo OR mail_address=:pseudo");
+        $this->db->bind(':pseudo', $pseudo);
+
+        $result = $this->db->fetch();
+
+        if (!$result) {
+            return '';
+        }
+
+        if (password_verify($password, $result->password)) {
+            return hash("haval256,5", $result->id);
+        }
+
+        return '';
+    }
 }

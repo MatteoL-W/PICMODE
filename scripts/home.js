@@ -9,7 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
             // Quand on récupère les résultats, on les stocke
             posts = results;
         }).then(() => {
-            // Quand on les a stocké, on les affiche
-            displayPosts(posts, '.feed');
-        })
+        // Quand on les a stocké, on les affiche
+        displayPosts(posts, '.feed');
+    })
+
 });
