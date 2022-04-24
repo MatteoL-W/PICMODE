@@ -24,6 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `clothing`
+--
+
+DROP TABLE IF EXISTS `clothing`;
+CREATE TABLE IF NOT EXISTS `clothing` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `type` varchar(50) NOT NULL,
+    `color` varchar(50) NOT NULL,
+    `url_shop` varchar(100) NOT NULL,
+    `style` varchar(50) NOT NULL,
+    `store` varchar(20) NOT NULL,
+    PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `clothing`
+--
+
+INSERT INTO `clothing` (`id`, `type`, `color`, `url_shop`, `style`, `store`) VALUES
+    (1, 'jean mom oversize', 'bleu ciel', 'magasin.com', 'Alt y2k vintage', 'Le magasin');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `comment`
 --
 
@@ -86,7 +110,7 @@ DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` text NOT NULL,
-  `picture` text NOT NULL,
+  `picture` longtext NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
@@ -113,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `date_of_birth` date NOT NULL,
   `name` varchar(20) NOT NULL,
   `firstname` varchar(20) NOT NULL,
-  `profile_picture` text NOT NULL,
+  `profile_picture` longtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 

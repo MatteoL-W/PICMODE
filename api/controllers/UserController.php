@@ -43,6 +43,15 @@ class UserController
         $this->read();
     }
 
+    public function login(): void
+    {
+        $data = json_decode(file_get_contents("php://input"));
+
+        if (isset($data->pseudo, $data->password)) {
+            return_json(json_encode($this->user->login($data->pseudo, $data->password)));
+        }
+    }
+
     public function update(int $id): void
     {
         $data = json_decode(file_get_contents("php://input"));
