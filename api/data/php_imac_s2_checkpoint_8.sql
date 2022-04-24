@@ -110,7 +110,7 @@ DROP TABLE IF EXISTS `post`;
 CREATE TABLE IF NOT EXISTS `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` text NOT NULL,
-  `picture` text NOT NULL,
+  `picture` longtext NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `date_of_birth` date NOT NULL,
   `name` varchar(20) NOT NULL,
   `firstname` varchar(20) NOT NULL,
-  `profile_picture` text NOT NULL,
+  `profile_picture` longtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 

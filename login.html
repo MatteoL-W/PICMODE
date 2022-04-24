@@ -11,14 +11,13 @@
 <body>
     <h1>Login</h1>
 
-    <!-- The feed will be filled in js -->
     <form action="#" class="loginForm">
         <label>
-            <input type="text" name="name" placeholder="name">
+            <input type="text" name="pseudo" placeholder="Pseudo ou mail">
         </label>
 
         <label>
-            <input type="password" name="password" placeholder="password">
+            <input type="password" name="password" placeholder="Mot de passe">
         </label>
 
         <input type="submit" value="Connexion">
@@ -26,8 +25,38 @@
 
     <h1>Inscription</h1>
 
-    <form action="#">
+    <form action="#" class="registerForm">
+        <label>
+            <input type="text" name="pseudo" placeholder="Pseudo">
+        </label>
 
+        <label>
+            <input type="email" name="mail_address" placeholder="Adresse e-mail">
+        </label>
+
+        <label>
+            <input type="password" name="password" placeholder="Mot de passe">
+        </label>
+
+        <label>
+            <input type="text" name="firstname" placeholder="Prénom">
+        </label>
+
+        <label>
+            <input type="text" name="name" placeholder="Nom de famille">
+        </label>
+
+        <label>
+            <input type="date" name="date_of_birth" placeholder="Date de naissance">
+        </label>
+
+        <label>
+            <input type="file" name="profile_picture" placeholder="Photo de profil">
+        </label>
+
+        <label>
+            <input type="submit" name="profile_picture" value="Inscription">
+        </label>
     </form>
 
     <script src="scripts/login.js" type="module"></script>

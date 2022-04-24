@@ -11,7 +11,8 @@
 6. Change `api/config/credentials.php` to match your database password.
 7. Import `api/data/php_imac_s2.php` in your database.
 8. Go to http://localhost/S2_PHP/
-9. It should be working now !
+9. Execute `SET GLOBAL max_allowed_packet=16777216;` in your SQL Prompt to allow large pictures.
+10. It should be working now !
 
 ## How to create a new CRUD ?
 
