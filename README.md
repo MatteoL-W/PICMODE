@@ -6,13 +6,13 @@
 2. Install https://nodejs.org/en/download/
 3. Install https://getcomposer.org/download/
 4. Place the repository in your server (wamp64/www/S2_PHP). Be sure that your link is starting with S2_PHP.
-5. Start with a `npm install` to install the node_modules folder 5Then go into your api folder and install composer
-   dependencies with a `cd api; composer install` to install the vendor folder
-6. Change `api/config/credentials.php` to match your database password.
-7. Import `api/data/php_imac_s2.php` in your database.
-8. Go to http://localhost/S2_PHP/
-9. Execute `SET GLOBAL max_allowed_packet=16777216;` in your SQL Prompt to allow large pictures.
-10. It should be working now !
+5. Start with a `npm install` to install the node_modules folder
+6. Then go into your api folder and install composer dependencies with a `cd api; composer install` to install the vendor folder
+7. Change `api/config/credentials.php` to match your database password.
+8. Import `api/data/php_imac_s2.php` in your database.
+9. Go to http://localhost/S2_PHP/
+10. Execute `SET GLOBAL max_allowed_packet=16777216;` in your SQL Prompt to allow large pictures.
+11. It should be working now !
 
 ## How to create a new CRUD ?
 
