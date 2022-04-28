@@ -7,7 +7,7 @@ export function displayPosts(posts, selector) {
     }
 }
 
-function generatePostHtml(post) {
+export function generatePostHtml(post) {
     // A post have a "description", a "picture", a "date" and will have an idAuthor -> "pseudo" / "name" / "firstName" / "profile_picture"
 
     const postDate = createElementAndText('p', post.date);
