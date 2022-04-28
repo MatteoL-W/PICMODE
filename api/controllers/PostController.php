@@ -25,6 +25,30 @@ class PostController
         return_json(json_encode($post));
     }
 
+    public function getAllPostsFromUserId(int $id)
+    {
+        $post=$this->post->selectAllPostsFromUserId($id);
+        return_json(json_encode($post));
+    }
+
+    public function countPosts(int $id)
+    {
+        $post=$this->post->countPostsFromUserId($id);
+        return_json(json_encode($post));
+    }
+
+    public function getAllPosts(int $id)
+    {
+        $post=$this->post->selectAllPostsWithUsers($id);
+        return_json(json_encode($post));
+    }
+
+    public function getLoggedPosts(int $id)
+    {
+        $post=$this->post->selectAllFollowedPostsFromLoggedUser($id);
+        return_json(json_encode($post));
+    }
+
     public function create(): void
     {
         $data = json_decode(file_get_contents("php://input"));
