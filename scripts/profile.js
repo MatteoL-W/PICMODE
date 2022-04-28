@@ -6,17 +6,22 @@ window.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(queryString);
     const userId = urlParams.get('user')
 
-    if (!userId) { alert("merci de sélectionner un user / http://localhost/S2_PHP/profile.html?user=2 par exemple"); }
+    if (!userId) {
+        // gérer mieux l'erreur
+        alert("merci de sélectionner un user / http://localhost/S2_PHP/profile.html?user=2 par exemple");
+    }
 
     useFetch('/S2_PHP/api/user/' + userId, 'GET')
         .then(response => {
             // Quand on récupère les résultats, on les affiche
             displayProfile(response, '.profile');
         })
+
+    // utiliser un fetch et displayPosts pour afficher les posts de l'utilisateur en question
 });
 
-function displayProfile(posts, selector) {
+function displayProfile(profile, selector) {
     // afficher le haut du profil dynamiquement
     // faire le trait séparateur
-    // utiliser displayPosts pour afficher les posts de l'utilisateur
+    console.log(profile)
 }
