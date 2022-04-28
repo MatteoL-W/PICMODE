@@ -9,15 +9,16 @@ html, body {
 
 @import 'include/header.scss';
 @import 'include/footer.scss';
+@import 'include/home.scss';
 
-// Pour lancer le scss une fois : "npm start scss"
-//  Pour écouter chaque changements : "npm start scss-w"
+// Pour lancer le scss une fois : "npm run scss"
+//  Pour écouter chaque changements : "npm run scss-w"
 //
 //  Avantages du scss :
 //  On peut include d'autres fichiers, utiliser des "mixins" (c'est des gens de fonctions), indenter des propriétés :
 //
 //  .carte {
-//    width: 100%
+//    width: 100%;
 //    .photo {
 //      opacity: 0.5;
 //    }
