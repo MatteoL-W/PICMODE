@@ -1,5 +1,5 @@
-import {useFetch} from "./modules/fetchTools";
-import {displayPosts} from "./modules/postTools";
+import {useFetch} from "./modules/fetchTools.js";
+import {displayPosts} from "./modules/postTools.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     const queryString = window.location.search;

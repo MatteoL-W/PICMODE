@@ -1,4 +1,4 @@
-import {createDiv, createElementAndText, createImage} from "./htmlTools"
+import {createDiv, createElementAndText, createImage} from "./htmlTools.js"
 
 export function displayPosts(posts, selector) {
     for (let i = 0; i < posts.length; i++) {
