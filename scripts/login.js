@@ -30,6 +30,8 @@ function registerFormHandling() {
         const formData = new FormData(e.target);
         const form = Object.fromEntries(formData);
 
+        // vérifier que profile pic est une image
+
         const base64picture = await toBase64(form.profile_picture).catch(e => Error(e));
         if (!base64picture instanceof Error) {
             alert("pdp marche po");

@@ -12,7 +12,7 @@ export function generatePostHtml(post) {
 
     const postDate = createElementAndText('p', post.date);
     const postDescription = createElementAndText('p', post.description);
-    const postPicture = createImage(post.picture)
+    const postPicture = createImage('api/' + post.picture)
 
     const card = createDiv(['card']);
     card.appendChild(postDate);
