@@ -19,22 +19,25 @@ class LikeController
         return_json(json_encode($all));
     }
 
-    public function getLikers(int $id) {
-        $liker = $this->like->selectAllLikersFromPost($id);
-        return_json(json_encode($liker));
-    }
-
     public function getLikes(int $id) {
         $likes = $this->like->selectAllLikesOfUser($id);
         return_json(json_encode($likes));
     }
 
+    public function getLikers(int $id) {
+        $liker = $this->like->selectAllLikersFromPost($id);
+        return_json(json_encode($liker));
+    }
+
+    public function countLikes(int $id) {
+        $likes = $this->like->countLikesOfUser($id);
+        return_json(json_encode($likes));
+    }
 
     public function countLikers(int $id) {
         $likers = $this->like->countLikersFromPost($id);
         return_json(json_encode($likers));
     }
-
 
     public function create(): void
     {
