@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 30 avr. 2022 à 08:08
+-- Généré le : lun. 02 mai 2022 à 08:23
 -- Version du serveur : 5.7.36
 -- Version de PHP : 8.0.13
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `clothing` (
   `style` varchar(50) NOT NULL,
   `store` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `clothing`
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `like` (
   `idPost` int(11) NOT NULL,
   KEY `NomidUser` (`idUser`),
   KEY `NomidPost` (`idPost`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `picture` longtext NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `firstname` varchar(20) NOT NULL,
   `profile_picture` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contraintes pour les tables déchargées
@@ -171,6 +171,13 @@ CREATE TABLE IF NOT EXISTS `user` (
 ALTER TABLE `following`
   ADD CONSTRAINT `following_ibfk_1` FOREIGN KEY (`idFollower`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `following_ibfk_2` FOREIGN KEY (`idFollowing`) REFERENCES `user` (`id`);
+
+--
+-- Contraintes pour la table `like`
+--
+ALTER TABLE `like`
+  ADD CONSTRAINT `like_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `like_ibfk_2` FOREIGN KEY (`idPost`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

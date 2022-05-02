@@ -6,7 +6,7 @@ use stdClass;
 
 class Like extends BaseModel
 {
-    public string $entity = 'like';
+    public string $entity = '`like`';
 
     public function create(int $idUser, int $idPost): bool
     {
@@ -18,21 +18,21 @@ class Like extends BaseModel
 
     public function selectAllLikersFromPost(int $idPost)
     {
-        $this->db->query("SELECT * FROM like WHERE idPost = :id");
+        $this->db->query("SELECT * FROM `like` JOIN user ON user.id = idUser WHERE idPost = :id");
         $this->db->bind(':id', $idPost);
         return $this->db->fetchAll();
     }
 
     public function selectAllLikesOfUser(int $idUser)
     {
-        $this->db->query("SELECT * FROM like WHERE idUser = :id");
+        $this->db->query("SELECT * FROM `like` WHERE idUser = :id");
         $this->db->bind(':id', $idUser);
         return $this->db->fetchAll();
     }
 
     public function countLikersFromPost(int $idPost)
     {
-        $this->db->query("SELECT COUNT(*) FROM like WHERE idUser = :id");
+        $this->db->query("SELECT COUNT(*) FROM `like` WHERE idUser = :id");
         $this->db->bind(':id', $idPost);
         return $this->db->fetch();
     }
@@ -40,7 +40,7 @@ class Like extends BaseModel
 
     public function delete(int $id, int $idPost = -1): bool
     {
-        $this->db->query("DELETE FROM like WHERE idUser = :idUser AND idPost = :idPost");
+        $this->db->query("DELETE FROM `like` WHERE idUser = :idUser AND idPost = :idPost");
         $this->db->bind(':idUser', $id);
         $this->db->bind(':idPost', $idPost);
 

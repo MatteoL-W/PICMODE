@@ -32,7 +32,7 @@ class LikeController
 
     public function countLikers(int $id) {
         $likers = $this->like->countLikersFromPost($id);
-        return_json(json_encode($followers));
+        return_json(json_encode($likers));
     }
 
 
