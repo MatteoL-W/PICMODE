@@ -54,4 +54,12 @@ array_push($router, ['/following/countFollowing/{id}/', ['controller' => 'Follow
 array_push($router, ['/following/', ['controller' => 'Following', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new following<br>(send idFollower and idFollowing in query)']]);
 array_push($router, ['/following/{id}/{id2}/', ['controller' => 'Following', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a following<br>(id = idFollower ; id2 = idFollowing)']]);
 
+array_push($router, ['/like/', ['controller' => 'Like', 'action' => 'read', 'method' => 'get', 'desc' => 'Return all the likes']]);
+array_push($router, ['/like/getLikes/{id}/', ['controller' => 'Like', 'action' => 'getLikes', 'method' => 'get', 'desc' => 'Get all the Likes of a user']]);
+array_push($router, ['/like/getLikers/{id}/', ['controller' => 'Like', 'action' => 'getLikers', 'method' => 'get', 'desc' => 'Get all the Likers of a post']]);
+array_push($router, ['/like/countLikers/{id}/', ['controller' => 'Like', 'action' => 'countLikers', 'method' => 'get', 'desc' => 'Count the likers of a post']]);
+array_push($router, ['/like/', ['controller' => 'Like', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new like<br>(send idUser and idPost in query)']]);
+array_push($router, ['/like/{id}/{id2}/', ['controller' => 'Like', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a Like<br>(id = idUser ; id2 = idPost)']]);
+
+
 

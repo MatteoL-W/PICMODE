@@ -16,14 +16,21 @@ class Like extends BaseModel
         return $this->createFromArray($values, $keys);
     }
 
-    public function selectAllLikerFromPost(int $idPost)
+    public function selectAllLikersFromPost(int $idPost)
     {
         $this->db->query("SELECT * FROM like WHERE idUser = :id");
         $this->db->bind(':id', $idPost);
         return $this->db->fetchAll();
     }
 
-    public function countLikerFromPost(int $idPost)
+    public function selectAllLikesOfUser(int $idUser)
+    {
+        $this->db->query("SELECT * FROM like WHERE idPost = :id");
+        $this->db->bind(':id', $idUser);
+        return $this->db->fetchAll();
+    }
+
+    public function countLikersFromPost(int $idPost)
     {
         $this->db->query("SELECT COUNT(*) FROM like WHERE idUser = :id");
         $this->db->bind(':id', $idPost);
