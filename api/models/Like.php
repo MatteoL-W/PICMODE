@@ -18,14 +18,14 @@ class Like extends BaseModel
 
     public function selectAllLikersFromPost(int $idPost)
     {
-        $this->db->query("SELECT * FROM like WHERE idUser = :id");
+        $this->db->query("SELECT * FROM like WHERE idPost = :id");
         $this->db->bind(':id', $idPost);
         return $this->db->fetchAll();
     }
 
     public function selectAllLikesOfUser(int $idUser)
     {
-        $this->db->query("SELECT * FROM like WHERE idPost = :id");
+        $this->db->query("SELECT * FROM like WHERE idUser = :id");
         $this->db->bind(':id', $idUser);
         return $this->db->fetchAll();
     }
