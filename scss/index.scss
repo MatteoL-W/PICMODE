@@ -38,3 +38,36 @@ html, body {
 //  }
 //
 //  Donc c'est pas mal pratique !
+
+*{
+  margin: 0;
+}
+
+body {
+  color: #707070;
+  font-family: "Segoe UI";
+  a {
+    text-decoration: none;
+    color: #707070;
+  }
+  a:hover {
+    color:#424242
+  }
+  a:active {
+    color: #AA1B2D;
+  }
+}
+
+
+/* typographie */
+@font-face {
+  font-family: "Segoe UI";
+  src:
+          url("/assets/font/segeoui.ttf") format("ttf"),
+}
+
+
+
+
+
+

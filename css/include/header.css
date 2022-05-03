@@ -1,0 +1,21 @@
+/* nav bar */
+header {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.356); }
+  header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    header nav .nav {
+      align-items: center;
+      width: 10vw;
+      padding: 1.2em;
+      display: flex;
+      flex-direction: row; }
+      header nav .nav .profile_picture {
+        /* ?? */ }
+      header nav .nav .logo {
+        max-width: 20vw;
+        max-height: 20vh; }
