@@ -1,3 +1,53 @@
-.card {
+/*.card {
   background: gray;
-  padding: 50px; }
+  padding: 50px;
+}*/
+/* button */
+.add_content {
+  width: 15vw;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid #AA1B2D;
+  border-radius: 30px;
+  padding: 0;
+  margin: 20px auto; }
+
+/* content */
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* posts section */ }
+  main section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 5vh; }
+    main section .post {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 25vw;
+      border: 1px solid #AA1B2D;
+      padding: 1vw 3vh; }
+      main section .post .head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; }
+      main section .post .post_picture {
+        max-width: 23vw;
+        margin: auto;
+        /* max-height: auto; */ }
+      main section .post .post_button {
+        display: flex;
+        justify-content: end; }
+      main section .post .react {
+        padding: 0;
+        margin: 1%;
+        align-items: end; }
+      main section .post .react img {
+        width: 1.5vw; }

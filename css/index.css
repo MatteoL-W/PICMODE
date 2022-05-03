@@ -5,6 +5,115 @@ html, body {
   margin: 0;
   padding: 0; }
 
-.card {
+/* nav bar */
+header {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.356); }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.nav {
+  align-items: center;
+  width: 10vw;
+  padding: 1.2em;
+  display: flex;
+  flex-direction: row; }
+
+div .profile_picture {
+  background-image: url("assets/img/profil_picture.png");
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  width: 2vw; }
+
+.logo {
+  max-width: 20vw;
+  max-height: 20vh; }
+
+footer {
+  background-color: #707070;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3vh 6vw; }
+  footer .copyright {
+    margin: auto;
+    font-style: italic; }
+
+/*.card {
   background: gray;
-  padding: 50px; }
+  padding: 50px;
+}*/
+/* button */
+.add_content {
+  width: 15vw;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid #AA1B2D;
+  border-radius: 30px;
+  padding: 0;
+  margin: 20px auto; }
+
+/* content */
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* posts section */ }
+  main section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 5vh; }
+    main section .post {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 25vw;
+      border: 1px solid #AA1B2D;
+      padding: 1vw 3vh; }
+      main section .post .head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; }
+      main section .post .post_picture {
+        max-width: 23vw;
+        margin: auto;
+        /* max-height: auto; */ }
+      main section .post .post_button {
+        display: flex;
+        justify-content: end; }
+      main section .post .react {
+        padding: 0;
+        margin: 1%;
+        align-items: end; }
+      main section .post .react img {
+        width: 1.5vw; }
+
+* {
+  margin: 0; }
+
+body {
+  color: #707070;
+  font-family: "Segoe UI"; }
+  body a {
+    text-decoration: none;
+    color: #707070; }
+  body a:hover {
+    color: #424242; }
+  body a:active {
+    color: #AA1B2D; }
+
+/* typographie */
+@font-face {
+  font-family: "Segoe UI";
+  src: url("assets/font/segoeui.ttf") format("ttf"); }
