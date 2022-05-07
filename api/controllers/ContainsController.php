@@ -24,6 +24,11 @@ class ContainsController
         return_json(json_encode($clothing));
     }
 
+    public function countClothing(int $id) {
+        $clothing = $this->contains->countClothingFromPostId($id);
+        return_json(json_encode($clothing));
+    }
+
     public function create(): void
     {
         $data = json_decode(file_get_contents("php://input"));

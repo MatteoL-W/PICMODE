@@ -24,6 +24,13 @@ class Contains extends BaseModel
         return $this->db->fetchAll();
     }
 
+    public function countClothingFromPostId(int $idPost)
+    {
+        $this->db->query("SELECT COUNT(*) FROM contains WHERE idPost = :id");
+        $this->db->bind(':id', $idPost);
+        return $this->db->fetch();
+    }
+
     // On override la fonction déjà présente dans BaseModel.php
     public function delete(int $id, int $idClothing = -1): bool
     {
