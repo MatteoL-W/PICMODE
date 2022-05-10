@@ -5,6 +5,8 @@ namespace Controllers;
 use DateTime;
 use Models\Post;
 
+include('../app/uploadHandler.php');
+
 class PostController
 {
     private Post $post;
@@ -55,7 +57,8 @@ class PostController
 
         if (isset($data->description, $data->picture, $data->date, $data->idUser)
             && is_string($data->description) && is_string($data->picture) && is_numeric($data->idUser) && DateTime::createFromFormat('Y-m-d', $data->date)) {
-            if (!$this->post->create($data->description, $data->picture, $data->date, $data->idUser)) {
+            $uploadedImage = uploadImage($data->picture, 'post/');
+            if (!$this->post->create($data->description, $uploadedImage, $data->date, $data->idUser)) {
                 return;
             }
         } else {

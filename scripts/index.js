@@ -1,7 +1,7 @@
 import {useFetch} from "./modules/fetchTools";
 
 window.addEventListener('DOMContentLoaded', () => {
-    useFetch('http://localhost/S2_PHP/api/example', 'GET').then(results => {
+    useFetch('/S2_PHP/api/example', 'GET').then(results => {
         console.log(results)
     })
 

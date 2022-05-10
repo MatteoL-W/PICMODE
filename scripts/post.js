@@ -1,4 +1,4 @@
-import {useFetch} from "./modules/fetchTools";
+import {useFetch} from "./modules/fetchTools.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     const queryString = window.location.search;

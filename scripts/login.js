@@ -1,4 +1,4 @@
-import {useFetch, toBase64} from "./modules/fetchTools";
+import {useFetch, toBase64} from "./modules/fetchTools.js";
 
 function loginFormHandling() {
     let loginForm = document.querySelector('.loginForm');
@@ -8,13 +8,13 @@ function loginFormHandling() {
         const formData = new FormData(e.target);
         const form = Object.fromEntries(formData);
 
-        useFetch('http://localhost/S2_PHP/api/user/login', 'POST', {
+        useFetch('/S2_PHP/api/user/login', 'POST', {
             pseudo: form.pseudo,
             password: form.password
         }).then(results => {
             if (results) {
                 sessionStorage.setItem('fashion_token', results);
-                location.assign('http://localhost/S2_PHP/home');
+                location.assign('/S2_PHP/home');
             } else {
                 alert("didnt login")
             }
@@ -30,13 +30,15 @@ function registerFormHandling() {
         const formData = new FormData(e.target);
         const form = Object.fromEntries(formData);
 
+        // vérifier que profile pic est une image
+
         const base64picture = await toBase64(form.profile_picture).catch(e => Error(e));
         if (!base64picture instanceof Error) {
             alert("pdp marche po");
             return;
         }
 
-        useFetch('http://localhost/S2_PHP/api/user/', 'POST', {
+        useFetch('/S2_PHP/api/user/', 'POST', {
             pseudo: form.pseudo,
             mail_address: form.mail_address,
             password: form.password,
@@ -56,7 +58,7 @@ function registerFormHandling() {
 
 window.addEventListener('DOMContentLoaded', () => {
     if (sessionStorage.getItem('fashion_token')) {
-        location.assign('http://localhost/S2_PHP/home');
+        location.assign('/S2_PHP/home');
     }
 
     loginFormHandling();
