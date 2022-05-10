@@ -1,0 +1,52 @@
+@import 'include/header';
+@import 'include/footer';
+@import 'include/index';
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+
+  /* profile section */
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+
+    .clothe{
+
+      width: 70%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .clothe-picture{
+
+        display: flex;
+        justify-content: flex-start;
+
+        img{
+          max-width: 35vw;
+          margin-top: 10vh;
+          margin-bottom: 10vh;
+        }
+      }
+
+      .clothe-description{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        h1{
+          margin-bottom: 2rem;
+        }
+      }
+
+
+    }
+
+  }
+}

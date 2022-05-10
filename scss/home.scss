@@ -1,7 +1,13 @@
+
 /*.card {
   background: gray;
   padding: 50px;
 }*/
+
+@import 'include/header';
+@import 'include/footer';
+@import 'include/index';
+
 
 /* button */
 .add_content {
