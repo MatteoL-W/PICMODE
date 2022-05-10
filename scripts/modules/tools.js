@@ -9,3 +9,7 @@ export function getDate() {
     const yyyy = today.getFullYear();
     return yyyy + '-' + mm + '-' + dd;
 }
+
+export function clear(classname) {
+    document.querySelector(classname).innerHTML = '';
+}
