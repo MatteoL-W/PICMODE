@@ -14,14 +14,55 @@ window.addEventListener('DOMContentLoaded', () => {
     useFetch('/S2_PHP/api/user/' + userId, 'GET')
         .then(response => {
             // Quand on récupère les résultats, on les affiche
-            displayProfile(response, '.profile');
+            displayProfile(response, '.profile', userId);
         })
 
     // utiliser un fetch et displayPosts pour afficher les posts de l'utilisateur en question
 });
 
-function displayProfile(profile, selector) {
-    // afficher le haut du profil dynamiquement
+function displayProfile(profile, selector, userId) {
+
+    //nombre d'abonnés
+    //let followers_nb;
+    const followers_number = document.querySelector('.followers');
+
+    useFetch('/S2_PHP/api/following/countFollowers/' + userId, 'GET', {})
+        .then(response => {
+            followers_number.innerHTML = Object.values(response)[0];
+        })
+    //console.log(followers_nb)
+
+
+    //nombre d'abonnement
+    //let following_nb;
+    const following_number = document.querySelector('.following');
+
+    useFetch('/S2_PHP/api/following/countFollowing/' + userId, 'GET', {})
+        .then(response => {
+            following_number.innerHTML = Object.values(response)[0];
+        })
+
+    //profile picture
+    //username
+    const profile_picture = document.querySelector('.profilePicture');
+    const username = document.querySelector('.username');
+
+    useFetch('/S2_PHP/api/user/' + userId, 'GET', {})
+        .then(response => {
+            profile_picture.innerHTML = response.profile_picture;
+            username.innerHTML = response.pseudo;
+        })
+
+
+
     // faire le trait séparateur
+
+    const posts = document.querySelector('.posts');
+
+    useFetch('/S2_PHP/api/post/' + userId, 'GET', {}) //ce sera post et select tous les posts, attendre le merge
+        .then(response => {
+            displayPosts(response, '.posts')
+        })
+
     console.log(profile)
 }
