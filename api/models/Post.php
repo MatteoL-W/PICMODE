@@ -14,6 +14,19 @@ class Post extends BaseModel
         return $this->createFromArray($values, $keys);
     }
 
+    public function select(int $id)
+    {
+        $this->db->query("SELECT post.*, user.id, user.pseudo, user.name, user.firstname, user.profile_picture FROM post JOIN user on user.id = post.idUser WHERE post.id = :id");
+        $this->db->bind(':id', $id);
+        return $this->db->fetch();
+    }
+
+    public function selectAll(): array
+    {
+        $this->db->query("SELECT post.*, user.id, user.pseudo, user.name, user.firstname, user.profile_picture FROM post JOIN user on user.id = post.idUser");
+        return $this->db->fetchAll();
+    }
+
     //Méthode pour selectionner tous les posts d'un User
     public function selectAllPostsFromUserId(int $idUser)
     {

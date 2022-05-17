@@ -77,59 +77,61 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  /* posts section */ }
-  main section {
+  flex-wrap: nowrap; }
+
+/* posts section */
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 5vh; }
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 33%;
+  border: 1px solid #AA1B2D;
+  /*padding: 1vw 3vh;*/ }
+  .post .head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1vh 1vw; }
+  .post .post_picture {
+    max-width: 23vw;
+    margin: auto;
+    margin: 1vh 1vw;
+    /* max-height: auto; */ }
+  .post .foot {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: nowrap;
-    width: 100%;
-    margin-bottom: 5vh; }
-    main section .post {
+    margin: 1vh 1vw; }
+    .post .foot .tags {
       display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 25vw;
-      border: 1px solid #AA1B2D;
-      /*padding: 1vw 3vh;*/ }
-      main section .post .head {
+      flex-direction: row;
+      justify-content: start;
+      flex-wrap: wrap; }
+      .post .foot .tags .tag {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 1vh 1vw; }
-      main section .post .post_picture {
-        max-width: 23vw;
-        margin: auto;
-        margin: 1vh 1vw;
-        /* max-height: auto; */ }
-      main section .post .foot {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 1vh 1vw; }
-        main section .post .foot .tags {
-          display: flex;
-          flex-direction: row;
-          justify-content: start;
-          flex-wrap: wrap; }
-          main section .post .foot .tags .tag {
-            display: flex;
-            justify-content: center;
-            padding: 1vh 1vw;
-            border: 1px solid #AA1B2D;
-            border-radius: 30px;
-            width: auto;
-            align-items: center;
-            margin: auto; }
-        main section .post .foot .post_button {
-          display: flex;
-          justify-content: end;
-          margin: 1vh 1vw; }
-          main section .post .foot .post_button .react {
-            padding: 0;
-            margin: 2%; }
-            main section .post .foot .post_button .react .react img {
-              width: 1.5vw; }
-      main section .post .description {
-        margin: 2vh 1vw; }
+        justify-content: center;
+        padding: 1vh 1vw;
+        border: 1px solid #AA1B2D;
+        border-radius: 30px;
+        width: auto;
+        align-items: center;
+        margin: auto; }
+    .post .foot .post_button {
+      display: flex;
+      justify-content: end;
+      margin: 1vh 1vw; }
+      .post .foot .post_button .react {
+        padding: 0;
+        margin: 2%; }
+        .post .foot .post_button .react .react img {
+          width: 1.5vw; }
+  .post .description {
+    margin: 2vh 1vw; }
