@@ -16,5 +16,12 @@ class Comment extends BaseModel
 
     }
 
+    //Méthode pour selectionner tous les commentaires sous un post
+    public function selectAllCommentsFromPost (int $idPost){
+        $this->db->query("SELECT comment.* FROM comment INNER JOIN post ON comment.idPost = post.id WHERE idPost = :id ORDER BY date DESC");
+        $this->db->bind(':id', $idPost);
+        return $this->db->fetchAll();
+    }
+
 
 }
