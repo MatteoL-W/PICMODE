@@ -2,7 +2,6 @@
 @import 'include/footer';
 @import 'include/index';
 
-
 main {
   display: flex;
   flex-direction: column;
@@ -15,16 +14,13 @@ main {
     flex-direction: row;
     justify-content: space-around;
 
-
     .clothe{
-
       width: 70%;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
 
       .clothe-picture{
-
         display: flex;
         justify-content: flex-start;
 
@@ -44,9 +40,6 @@ main {
           margin-bottom: 2rem;
         }
       }
-
-
     }
-
   }
 }

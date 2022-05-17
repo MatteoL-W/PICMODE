@@ -11,21 +11,28 @@ header {
   justify-content: space-around;
   background-color: white;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.356); }
-  header nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; }
-    header nav .nav {
-      align-items: center;
-      width: 10vw;
-      padding: 1.2em;
-      display: flex;
-      flex-direction: row; }
-      header nav .nav .profile_picture {
-        /* ?? */ }
-      header nav .nav .logo {
-        max-width: 20vw;
-        max-height: 20vh; }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.nav {
+  align-items: center;
+  width: 10vw;
+  padding: 1.2em;
+  display: flex;
+  flex-direction: row; }
+
+div .profile_picture {
+  background-image: url("assets/img/profil_picture.png");
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  width: 2vw; }
+
+.logo {
+  max-width: 20vw;
+  max-height: 20vh; }
 
 footer {
   background-color: #707070;
@@ -73,47 +80,24 @@ main {
       justify-content: space-around;
       width: 25vw;
       border: 1px solid #AA1B2D;
-      /*padding: 1vw 3vh;*/ }
+      padding: 1vw 3vh; }
       main section .post .head {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        margin: 1vh 1vw; }
+        justify-content: space-between; }
       main section .post .post_picture {
         max-width: 23vw;
         margin: auto;
-        margin: 1vh 1vw;
         /* max-height: auto; */ }
-      main section .post .foot {
+      main section .post .post_button {
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 1vh 1vw; }
-        main section .post .foot .tags {
-          display: flex;
-          flex-direction: row;
-          justify-content: start;
-          flex-wrap: wrap; }
-          main section .post .foot .tags .tag {
-            display: flex;
-            justify-content: center;
-            padding: 1vh 1vw;
-            border: 1px solid #AA1B2D;
-            border-radius: 30px;
-            width: auto;
-            align-items: center;
-            margin: auto; }
-        main section .post .foot .post_button {
-          display: flex;
-          justify-content: end;
-          margin: 1vh 1vw; }
-          main section .post .foot .post_button .react {
-            padding: 0;
-            margin: 2%; }
-            main section .post .foot .post_button .react .react img {
-              width: 1.5vw; }
-      main section .post .description {
-        margin: 2vh 1vw; }
+        justify-content: end; }
+      main section .post .react {
+        padding: 0;
+        margin: 1%;
+        align-items: end; }
+      main section .post .react img {
+        width: 1.5vw; }
 
 * {
   margin: 0; }
@@ -132,4 +116,4 @@ body {
 /* typographie */
 @font-face {
   font-family: "Segoe UI";
-  src: url("/assets/font/segeoui.ttf") format("ttf"); }
+  src: url("assets/font/segoeui.ttf") format("ttf"); }

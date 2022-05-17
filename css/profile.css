@@ -77,13 +77,7 @@ main {
   main section {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    /*max-width: 93rem;
-    padding: 0 2rem;
-
-    flex-wrap: nowrap;
-    width: 100%;
-    margin: 0 auto 5vh;*/ }
+    justify-content: space-around; }
     main section .profile {
       padding: 5rem 0; }
       main section .profile .profile-picture {
