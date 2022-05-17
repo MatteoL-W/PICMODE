@@ -27,15 +27,38 @@ class PostController
         return_json(json_encode($post));
     }
 
+    public function getAllPostsFromUserId(int $id)
+    {
+        $post=$this->post->selectAllPostsFromUserId($id);
+        return_json(json_encode($post));
+    }
+
+    public function countPosts(int $id)
+    {
+        $post=$this->post->countPostsFromUserId($id);
+        return_json(json_encode($post));
+    }
+
+    public function getAllPosts(int $id)
+    {
+        $post=$this->post->selectAllPostsWithUsers($id);
+        return_json(json_encode($post));
+    }
+
+    public function getLoggedPosts(int $id)
+    {
+        $post=$this->post->selectAllFollowedPostsFromLoggedUser($id);
+        return_json(json_encode($post));
+    }
+
     public function create(): void
     {
         $data = json_decode(file_get_contents("php://input"));
 
-
-        if (isset($data->description, $data->picture, $data->date)
-            && is_string($data->description) && is_string($data->picture) && DateTime::createFromFormat('Y-m-d', $data->date)) {
+        if (isset($data->description, $data->picture, $data->date, $data->idUser)
+            && is_string($data->description) && is_string($data->picture) && is_numeric($data->idUser) && DateTime::createFromFormat('Y-m-d', $data->date)) {
             $uploadedImage = uploadImage($data->picture, 'post/');
-            if (!$this->post->create($data->description, $uploadedImage, $data->date)) {
+            if (!$this->post->create($data->description, $uploadedImage, $data->date, $data->idUser)) {
                 return;
             }
         } else {
