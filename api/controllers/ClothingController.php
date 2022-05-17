@@ -28,9 +28,9 @@ class ClothingController
     {
         $data = json_decode(file_get_contents("php://input"));
 
-        if (isset($data->type, $data->color, $data->url_shop, $data->style, $data->store)
-            && is_string($data->type) && is_string($data->color) && is_string($data->url_shop) && is_string($data->style) && is_string($data->store)) {
-            if (!$this->clothing->create($data->type, $data->color, $data->url_shop, $data->style, $data->store)) {
+        if (isset($data->type, $data->color, $data->url_shop, $data->style, $data->store, $data->idTag)
+            && is_string($data->type) && is_string($data->color) && is_string($data->url_shop) && is_string($data->style) && is_string($data->store) && is_numeric($data->idTag)) {
+            if (!$this->clothing->create($data->type, $data->color, $data->url_shop, $data->style, $data->store, $data->idTag)) {
                 return;
             }
         } else {

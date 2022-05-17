@@ -7,10 +7,10 @@ class Clothing extends BaseModel
 {
     public string $entity = 'clothing';
 
-    public function create(string $type, string $color, string $url_shop, string $style, string $store): bool
+    public function create(string $type, string $color, string $url_shop, string $style, string $store, int $idTag): bool
     {
-        $values = [$type, $color, $url_shop, $style, $store];
-        $keys = ['type', 'color', 'url_shop', 'style', 'store'];
+        $values = [$type, $color, $url_shop, $style, $store, $idTag];
+        $keys = ['type', 'color', 'url_shop', 'style', 'store', 'idTag'];
 
         return $this->createFromArray($values, $keys);
     }
