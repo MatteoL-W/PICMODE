@@ -28,9 +28,9 @@ class CommentController
     {
         $data = json_decode(file_get_contents("php://input"));
 
-        if (isset($data->text)
-            && is_string($data->text)) {
-            if (!$this->comment->create($data->text)) {
+        if (isset($data->text, $data->idUser, $data->idPost)
+            && is_string($data->text) && is_numeric($data->idUser)  && is_numeric($data->idPost)) {
+            if (!$this->comment->create($data->text, $data->idUser, $data->idPost)) {
                 return;
             }
         } else {
