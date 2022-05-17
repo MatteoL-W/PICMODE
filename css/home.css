@@ -18,11 +18,14 @@ header {
       padding: 1.2em;
       display: flex;
       flex-direction: row; }
-      header nav .nav .profile_picture {
-        /* ?? */ }
-      header nav .nav .logo {
-        max-width: 20vw;
-        max-height: 20vh; }
+      header nav .nav .profil_name {
+        margin: 2px; }
+      header nav .nav .profil_picture {
+        min-width: 50px;
+        max-width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover; }
 
 footer {
   background-color: #707070;
@@ -30,7 +33,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3vh 6vw; }
+  padding: 3vh 6vw;
+  text-align: center; }
   footer .copyright {
     margin: auto;
     font-style: italic; }
@@ -92,14 +96,26 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 33%;
+  width: 30%;
   border: 1px solid #AA1B2D;
-  /*padding: 1vw 3vh;*/ }
+  margin: 1vw 1vh; }
   .post .head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 1vh 1vw; }
+    .post .head .hour {
+      display: flex;
+      align-items: center; }
+    .post .head .right {
+      display: flex;
+      align-items: center; }
+      .post .head .right .pictureProfil {
+        min-width: 50px;
+        max-width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover; }
   .post .post_picture {
     max-width: 23vw;
     margin: auto;

@@ -14,8 +14,11 @@ header {
       padding: 1.2em;
       display: flex;
       flex-direction: row; }
-      header nav .nav .profile_picture {
-        /* ?? */ }
-      header nav .nav .logo {
-        max-width: 20vw;
-        max-height: 20vh; }
+      header nav .nav .profil_name {
+        margin: 2px; }
+      header nav .nav .profil_picture {
+        min-width: 50px;
+        max-width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover; }

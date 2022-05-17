@@ -20,6 +20,7 @@ export function generatePostHtml(post) {
 
     //profile_picture
     const postUserPicture = createImage('api/' + post.profile_picture);
+    postUserPicture.classList.add('pictureProfil');
 
     //picture
     const postPicture = createImage('api/' + post.picture);
@@ -29,7 +30,7 @@ export function generatePostHtml(post) {
     const postDescription = createElementAndText('p', post.description);
 
     //tags
-    const postTag = createElementAndText('a', post.tag);
+    //const postTag = createElementAndText('a', post.tag);
 
     //like
     //const postLike = createElementAndText('a', post.react);
@@ -42,10 +43,12 @@ export function generatePostHtml(post) {
 
     const card = createDiv(['post']);
     const head = createDiv(['head']);
+    const right = createDiv(['right']);
     card.appendChild(head);
     head.appendChild(postDate);
-    head.appendChild(postUserName);
-    head.appendChild(postUserPicture);
+    head.appendChild(right);
+    right.appendChild(postUserName);
+    right.appendChild(postUserPicture);
     card.appendChild(postPicture);
     //const foot = createDiv(['foot']);
     //const tags = createDiv(['tags']);
