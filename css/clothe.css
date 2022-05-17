@@ -1,0 +1,86 @@
+/* nav bar */
+header {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.356); }
+  header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    header nav .nav {
+      align-items: center;
+      width: 10vw;
+      padding: 1.2em;
+      display: flex;
+      flex-direction: row; }
+      header nav .nav .profile_picture {
+        /* ?? */ }
+      header nav .nav .logo {
+        max-width: 20vw;
+        max-height: 20vh; }
+
+footer {
+  background-color: #707070;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3vh 6vw; }
+  footer .copyright {
+    margin: auto;
+    font-style: italic; }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+* {
+  margin: 0; }
+
+body {
+  color: #707070;
+  font-family: "Segoe UI"; }
+  body a {
+    text-decoration: none;
+    color: #707070; }
+  body a:hover {
+    color: #424242; }
+  body a:active {
+    color: #AA1B2D; }
+
+/* typographie */
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/assets/font/segeoui.ttf") format("ttf"); }
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* profile section */ }
+  main section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    main section .clothe {
+      width: 70%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      main section .clothe .clothe-picture {
+        display: flex;
+        justify-content: flex-start; }
+        main section .clothe .clothe-picture img {
+          max-width: 35vw;
+          margin-top: 10vh;
+          margin-bottom: 10vh; }
+      main section .clothe .clothe-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly; }
+        main section .clothe .clothe-description h1 {
+          margin-bottom: 2rem; }

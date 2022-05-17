@@ -1,4 +1,4 @@
-import {createDiv, createElementAndText, createImage} from "./htmlTools"
+import {createDiv, createElementAndText, createImage} from "./htmlTools.js"
 
 export function displayPosts(posts, selector) {
     for (let i = 0; i < posts.length; i++) {
@@ -12,7 +12,7 @@ export function generatePostHtml(post) {
 
     const postDate = createElementAndText('p', post.date);
     const postDescription = createElementAndText('p', post.description);
-    const postPicture = createImage(post.picture)
+    const postPicture = createImage('api/' + post.picture)
 
     const card = createDiv(['card']);
     card.appendChild(postDate);

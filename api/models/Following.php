@@ -19,14 +19,14 @@ class Following extends BaseModel
 
     public function selectAllFollowersFromUserId(int $idUser)
     {
-        $this->db->query("SELECT * FROM following WHERE idFollowing = :id");
+        $this->db->query("SELECT user.pseudo, user.name, user.firstname, user.profile_picture FROM following JOIN user ON user.id = idFollower WHERE idFollowing = :id");
         $this->db->bind(':id', $idUser);
         return $this->db->fetchAll();
     }
 
     public function selectAllFollowingFromUserId(int $idUser)
     {
-        $this->db->query("SELECT * FROM following WHERE idFollower = :id");
+        $this->db->query("SELECT user.pseudo, user.name, user.firstname, user.profile_picture FROM following JOIN user ON user.id = idFollowing WHERE idFollower = :id");
         $this->db->bind(':id', $idUser);
         return $this->db->fetchAll();
     }

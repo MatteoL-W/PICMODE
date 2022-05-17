@@ -1,0 +1,14 @@
+footer {
+  background-color: #707070;
+  color:white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3vh 6vw;
+  .copyright {
+    margin: auto;
+    font-style: italic;
+  }
+}
+
+

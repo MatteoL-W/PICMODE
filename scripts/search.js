@@ -1,5 +1,5 @@
-import {useFetch} from "./modules/fetchTools";
-import {displayPosts} from "./modules/postTools";
+import {useFetch} from "./modules/fetchTools.js";
+import {displayPosts} from "./modules/postTools.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     const queryString = window.location.search;
@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (!search) {
         // gérer mieux l'erreur
-        alert("merci de sélectionner un search / http://localhost/S2_PHP/profile.html?search=dsqdsqd par exemple");
+        alert("merci de sélectionner un search / http://localhost/S2_PHP/search.html?search=dsqdsqd par exemple");
     }
 
 
