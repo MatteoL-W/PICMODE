@@ -18,9 +18,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
         useFetch('http://localhost/S2_PHP/api/post', 'POST', {
             description: form.description,
-            picture: base64picture,
-            date: getDate()
-            //idAuthor : userId
+            date: getDate(),
+            idUser : 1,
+            picture: base64picture
         }).then(response => {
             if (response) {
                 clear('.feed');
