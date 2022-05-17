@@ -40,7 +40,6 @@ array_push($router, ['/post/{id}/', ['controller' => 'Post', 'action' => 'delete
 
 array_push($router, ['/comment/', ['controller' => 'Comment', 'action' => 'read', 'method' => 'get', 'desc' => 'Return all the comments']]);
 array_push($router, ['/comment/', ['controller' => 'Comment', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new comment<br>(send text, idUser and idPost in query)']]);
-array_push($router, ['/comment/', ['controller' => 'Comment', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new comment']]);
 array_push($router, ['/comment/getComments/{id}/', ['controller' => 'Comment', 'action' => 'getCommentsFromPost', 'method' => 'get', 'desc' => 'Get all comments from one post']]);
 array_push($router, ['/comment/{id}/', ['controller' => 'Comment', 'action' => 'read', 'method' => 'get', 'desc' => 'Get a single comment']]);
 array_push($router, ['/comment/{id}/', ['controller' => 'Comment', 'action' => 'update', 'method' => 'put', 'desc' => 'Update a comment']]);
