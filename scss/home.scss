@@ -1,0 +1,117 @@
+
+/*.card {
+  background: gray;
+  padding: 50px;
+}*/
+
+@import 'include/header';
+@import 'include/footer';
+@import 'include/index';
+
+
+/* button */
+.add_content {
+  width: 15vw;
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid #AA1B2D;
+  border-radius: 30px;
+  padding: 0;
+  margin: 20px auto;
+}
+
+/* content */
+main{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  /* posts section */
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 5vh;
+    .post {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 25vw;
+      border: 1px solid #AA1B2D;
+      /*padding: 1vw 3vh;*/
+      .head {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1vh 1vw;
+      }
+
+      .post_picture {
+        max-width: 23vw;
+        margin: auto;
+        margin: 1vh 1vw;
+        /* max-height: auto; */
+      }
+
+      .foot{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 1vh 1vw;
+
+        .tags{
+          display: flex;
+          flex-direction: row;
+          justify-content: start;
+          flex-wrap: wrap;
+          .tag {
+            display: flex;
+            justify-content: center;
+            padding: 1vh 1vw;
+            border: 1px solid #AA1B2D;
+            border-radius: 30px;
+            width: auto;
+            align-items: center;
+            margin: auto;
+
+          }
+        }
+
+        .post_button {
+          display: flex;
+          justify-content: end;
+          margin: 1vh 1vw;
+          .react {
+            padding: 0;
+            margin: 2%;
+            .react img {
+              width: 1.5vw;
+            }
+          }
+        }
+      }
+      .description{
+        margin: 2vh 1vw;
+      }
+
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

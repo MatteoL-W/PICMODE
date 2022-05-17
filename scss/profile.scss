@@ -1,0 +1,92 @@
+@import 'include/header';
+@import 'include/footer';
+@import 'include/index';
+
+/* button */
+.add_content {
+  width: 15vw;
+  align-items: center;
+
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border: 1px solid #AA1B2D;
+  border-radius: 30px;
+  padding: 0;
+  margin: 20px auto;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+
+
+  /* profile section */
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+
+    .profile {
+      padding: 5rem 0;
+
+      .profile-picture{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+          min-width: 200px;
+          max-width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .profile-user{
+        display: flex;
+        flex-direction: column;
+        font-size: 1.7rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .profile-stats{
+        display: flex;
+        flex-direction: row;
+        gap: 325px;
+
+        .profile-stats-followers{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        span {
+          //margin: auto;
+          margin-top: 0.3rem;
+          font-size: 1.4rem;
+          color: #AA1B2D;
+        }
+
+        .profile-stats-following{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+      }
+
+    }
+
+
+
+    }
+}
