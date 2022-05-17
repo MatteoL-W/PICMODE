@@ -49,6 +49,12 @@ class CommentController
         }
     }
 
+    public function getCommentsFromPost(int $id)
+    {
+        $comment=$this->comment->selectAllCommentsFromPost($id);
+        return_json(json_encode($comment));
+    }
+
     public function delete(int $id): void
     {
         if ($this->comment->delete($id)) {

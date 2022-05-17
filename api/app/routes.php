@@ -7,7 +7,7 @@
 array_push($router, ['/', ['controller' => 'Index', 'action' => 'index', 'method' => 'get', 'desc' => 'api Documentation']]);
 array_push($router, ['/about/', ['controller' => 'Index', 'action' => 'about', 'method' => 'get', 'desc' => 'About (demo) page']]);
 array_push($router, ['/test/{id}/', ['controller' => 'Index', 'action' => 'test', 'method' => 'get', 'desc' => 'Test with id (demo) page']]);
-array_push($router, ['/test/{id}/{id2}/', ['controller' => 'Index', 'action' => 'test2', 'method' => 'get', 'desc' => 'Test with id (demo) page']]);
+array_push($router, ['/test/{id}/{id2}/', ['controller' => 'Index', 'action' => 'test2', 'method' => 'get', 'desc' => 'Test with double id (demo) page']]);
 
 array_push($router, ['/example/', ['controller' => 'Example', 'action' => 'read', 'method' => 'get', 'desc' => 'Return all the examples']]);
 array_push($router, ['/example/', ['controller' => 'Example', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new example']]);
@@ -40,6 +40,8 @@ array_push($router, ['/post/{id}/', ['controller' => 'Post', 'action' => 'delete
 
 array_push($router, ['/comment/', ['controller' => 'Comment', 'action' => 'read', 'method' => 'get', 'desc' => 'Return all the comments']]);
 array_push($router, ['/comment/', ['controller' => 'Comment', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new comment<br>(send text, idUser and idPost in query)']]);
+array_push($router, ['/comment/', ['controller' => 'Comment', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new comment']]);
+array_push($router, ['/comment/getComments/{id}/', ['controller' => 'Comment', 'action' => 'getCommentsFromPost', 'method' => 'get', 'desc' => 'Get all comments from one post']]);
 array_push($router, ['/comment/{id}/', ['controller' => 'Comment', 'action' => 'read', 'method' => 'get', 'desc' => 'Get a single comment']]);
 array_push($router, ['/comment/{id}/', ['controller' => 'Comment', 'action' => 'update', 'method' => 'put', 'desc' => 'Update a comment']]);
 array_push($router, ['/comment/{id}/', ['controller' => 'Comment', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a comment']]);
