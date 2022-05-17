@@ -16,11 +16,16 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        if (!sessionStorage.getItem('fashion_token')) {
+            alert("you must login")
+            return;
+        }
+
         useFetch('http://localhost/S2_PHP/api/post', 'POST', {
             description: form.description,
-            picture: base64picture,
-            date: getDate()
-            //idAuthor : userId
+            date: getDate(),
+            idUser : sessionStorage.getItem('fashion_token'),
+            picture: base64picture
         }).then(response => {
             if (response) {
                 clear('.feed');
