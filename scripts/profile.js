@@ -23,7 +23,6 @@ window.addEventListener('DOMContentLoaded', () => {
 function displayProfile(profile, selector, userId) {
 
     //nombre d'abonnés
-    //let followers_nb;
     const followers_number = document.querySelector('.followers');
 
     useFetch('/S2_PHP/api/following/countFollowers/' + userId, 'GET', {})
@@ -34,7 +33,6 @@ function displayProfile(profile, selector, userId) {
 
 
     //nombre d'abonnement
-    //let following_nb;
     const following_number = document.querySelector('.following');
 
     useFetch('/S2_PHP/api/following/countFollowing/' + userId, 'GET', {})
@@ -57,12 +55,16 @@ function displayProfile(profile, selector, userId) {
 
     // faire le trait séparateur
 
+    //posts
     const posts = document.querySelector('.posts');
 
-    useFetch('/S2_PHP/api/post/' + userId, 'GET', {}) //ce sera post et select tous les posts, attendre le merge
+    useFetch('/S2_PHP/api/post/getAllPostsFromUserId/' + userId, 'GET', {})
         .then(response => {
+            console.log(response)
             displayPosts(response, '.posts')
         })
 
+
     console.log(profile)
 }
+
