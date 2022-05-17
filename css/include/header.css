@@ -4,25 +4,18 @@ header {
   justify-content: space-around;
   background-color: white;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.356); }
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around; }
-
-.nav {
-  align-items: center;
-  width: 10vw;
-  padding: 1.2em;
-  display: flex;
-  flex-direction: row; }
-
-div .profile_picture {
-  background-image: url("assets/img/profil_picture.png");
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  width: 2vw; }
-
-.logo {
-  max-width: 20vw;
-  max-height: 20vh; }
+  header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    header nav .nav {
+      align-items: center;
+      width: 10vw;
+      padding: 1.2em;
+      display: flex;
+      flex-direction: row; }
+      header nav .nav .profile_picture {
+        /* ?? */ }
+      header nav .nav .logo {
+        max-width: 20vw;
+        max-height: 20vh; }
