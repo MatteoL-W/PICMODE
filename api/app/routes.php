@@ -66,5 +66,4 @@ array_push($router, ['/like/countLikers/{id}/', ['controller' => 'Like', 'action
 array_push($router, ['/like/', ['controller' => 'Like', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new like<br>(send idUser and idPost in query)']]);
 array_push($router, ['/like/{id}/{id2}/', ['controller' => 'Like', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a Like<br>(id = idUser ; id2 = idPost)']]);
 
-
-
+array_push($router, ['/search/getAllUsersFromPseudo/', ['controller' => 'Search', 'action' => 'getAllUsersFromPseudo', 'method' => 'get', 'desc' => 'Get all the users containing the pseudo']]);
