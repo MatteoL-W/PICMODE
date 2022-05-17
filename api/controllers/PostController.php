@@ -51,6 +51,12 @@ class PostController
         return_json(json_encode($post));
     }
 
+    public function getAllPostsFromTagId(int $id)
+    {
+        $post=$this->post->selectAllPostsFromTagId($id);
+        return_json(json_encode($post));
+    }
+
     public function create(): void
     {
         $data = json_decode(file_get_contents("php://input"));
