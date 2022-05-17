@@ -47,11 +47,9 @@ function displayProfile(profile, selector, userId) {
 
     useFetch('/S2_PHP/api/user/' + userId, 'GET', {})
         .then(response => {
-            profile_picture.innerHTML = response.profile_picture;
+            profile_picture.src = '/S2_PHP/api/' + response.profile_picture;
             username.innerHTML = response.pseudo;
         })
-
-
 
     // faire le trait séparateur
 

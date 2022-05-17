@@ -9,21 +9,40 @@
     <title>ToDo</title>
 </head>
 <body>
-    <h1>Profile</h1>
+<h1>Profile</h1>
 
-    <!-- The feed will be filled in js -->
-    <div class="profile"></div>
+<!-- The feed will be filled in js -->
+<main>
+    <section>
+        <div class="profile">
+            <div class="profile-picture">
+                <img class="profilePicture" alt="User">
+            </div>
+            <div class="profile-user">
+                <h1 class="username"></h1>
+            </div>
+            <div class="profile-stats">
+                <div class="profile-stats-followers">
+                    <p>followers</p>
+                    <span class="followers"></span>
+                </div>
+
+                <div class="profile-stats-following">
+                    <p>following</p>
+                    <span class="following"></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
 
 
-    <!-- test -->
-    <div class="followers"></div>
-    <div class="following"></div>
-    <div class="profilePicture"></div>
-    <div class="username"></div>
-    <hr/> <!-- trait séparateur -->
-    <div class="posts"></div>
+
+<hr/> <!-- trait séparateur -->
+<div class="posts"></div>
 
 
-    <script src="scripts/profile.js" type="module"></script>
+<script src="scripts/profile.js" type="module"></script>
 </body>
 </html>
