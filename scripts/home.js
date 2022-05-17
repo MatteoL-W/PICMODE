@@ -16,10 +16,15 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        if (!sessionStorage.getItem('fashion_token')) {
+            alert("you must login")
+            return;
+        }
+
         useFetch('http://localhost/S2_PHP/api/post', 'POST', {
             description: form.description,
             date: getDate(),
-            idUser : 1,
+            idUser : sessionStorage.getItem('fashion_token'),
             picture: base64picture
         }).then(response => {
             if (response) {
