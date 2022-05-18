@@ -22,6 +22,42 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function displayProfile(profile, selector, userId) {
 
+    const follow = document.querySelector('.follow');
+    const unfollow = document.querySelector('.unfollow');
+
+
+    let connected_profile = false
+    if (userId === sessionStorage.getItem('fashion_token')) {
+        connected_profile = true
+
+        document.querySelector('.unfollow').style.display = 'none'
+        document.querySelector('.follow').style.display = 'none'
+
+        console.log("my profile")
+    }
+
+
+    let following = false
+    if (!connected_profile) {
+        useFetch('/S2_PHP/api/following/getFollowers/' + userId, 'GET')
+            .then(response => {
+                let i = 0;
+                for (i; i < response.length; i++) {
+                    if (response[i].id === sessionStorage.getItem('fashion_token')) {
+                        following = true
+                        document.querySelector('.unfollow').style.display = 'block'
+                        document.querySelector('.follow').style.display = 'none'
+                        return;
+                    }
+                    document.querySelector('.unfollow').style.display = 'none'
+                    document.querySelector('.follow').style.display = 'block'
+                }
+            })
+    }
+
+
+
+
     //nombre d'abonnés
     const followers_number = document.querySelector('.followers');
 
@@ -62,8 +98,9 @@ function displayProfile(profile, selector, userId) {
         })
 
 
+
     //bouton pour s'abonner
-    const follow = document.querySelector('.follow');
+
     follow.addEventListener('click', (e) => {
         e.preventDefault();
 
@@ -72,7 +109,8 @@ function displayProfile(profile, selector, userId) {
 
             useFetch('/S2_PHP/api/following/getFollowers/' + userId, 'GET', {}) //si la personne n'est pas déjà abonnée
                 .then(response => {
-                    for (let i = 0; i < response.length; i++) {
+                    let i = 0;
+                    for (i; i < response.length; i++) {
                         if (response[i].id === sessionStorage.getItem('fashion_token')) {
                             console.log("already following")
                             return;
@@ -84,17 +122,28 @@ function displayProfile(profile, selector, userId) {
                         idFollower : sessionStorage.getItem('fashion_token')
                     }).then(response => {
                         console.log("followed")
+                        followers_number.innerHTML = i + 1;
+                        document.querySelector('.follow').style.display = 'none'
+                        document.querySelector('.unfollow').style.display = 'block'
+                        following = true
                     })
                 })
         }
-        /*
-        useFetch('/S2_PHP/api/following/', 'POST', {
-            idFollowing : userId,
-            idFollower : sessionStorage.getItem('fashion_token')
-        }).then(response => {
-            console.log("followed")
+    })
+
+    //bouton pour se désabonner
+
+    unfollow.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        useFetch('/S2_PHP/api/following/' + sessionStorage.getItem('fashion_token') + '/' + userId, 'DELETE', {})
+            .then(response => {
+                console.log("unfollowed")
+                followers_number.innerHTML -= 1;
+                document.querySelector('.unfollow').style.display = 'none'
+                document.querySelector('.follow').style.display = 'block'
+                following = false
         })
-*/
     })
 
     console.log(profile)
