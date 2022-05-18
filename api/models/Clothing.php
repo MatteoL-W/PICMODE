@@ -14,4 +14,11 @@ class Clothing extends BaseModel
 
         return $this->createFromArray($values, $keys);
     }
+
+    public function selectAllFromPost(int $id): array
+    {
+        $this->db->query("SELECT clothing.* FROM clothing JOIN contains ON contains.idClothing = clothing.id JOIN post ON contains.idPost = post.id WHERE post.id = :id");
+        $this->db->bind(':id', $id);
+        return $this->db->fetchAll();
+    }
 }

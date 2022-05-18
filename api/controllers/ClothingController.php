@@ -24,6 +24,11 @@ class ClothingController
         return_json(json_encode($clothing));
     }
 
+    public function getFromPost(int $id) {
+        $clothing = $this->clothing->selectAllFromPost($id);
+        return_json(json_encode($clothing));
+    }
+
     public function create(): void
     {
         $data = json_decode(file_get_contents("php://input"));

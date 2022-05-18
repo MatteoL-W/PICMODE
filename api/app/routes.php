@@ -16,6 +16,7 @@ $router[] = ['/user/{id}/', ['controller' => 'User', 'action' => 'delete', 'meth
 
 $router[] = ['/clothing/', ['controller' => 'Clothing', 'action' => 'read', 'method' => 'get', 'desc' => 'Return all clothings']];
 $router[] = ['/clothing/{id}/', ['controller' => 'Clothing', 'action' => 'read', 'method' => 'get', 'desc' => 'Return a single clothing']];
+$router[] = ['/clothing/getFromPost/{id}/', ['controller' => 'Clothing', 'action' => 'getFromPost', 'method' => 'get', 'desc' => 'Get clothings from a post']];
 $router[] = ['/clothing/', ['controller' => 'Clothing', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new clothing<span>{type, color, url_shop, style, store, idTag}</span>']];
 $router[] = ['/clothing/{id}/', ['controller' => 'Clothing', 'action' => 'update', 'method' => 'put', 'desc' => 'Update a clothing<span>you can update one or more fields (see above)</span>']];
 $router[] = ['/clothing/{id}/', ['controller' => 'Clothing', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a clothing']];
