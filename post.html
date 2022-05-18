@@ -40,42 +40,26 @@
                     <p>Lorem ipsum dolor sit amet...</p>
                 </div>
                 <div class="clothe-wardrobe">
-                    <h1>Clothes</h1>
-                    <form action="" class="add-clothing">
+                    <h1>Post</h1>
+                    <a href="createClothe.html" style="text-decoration: underline">Create a clothe</a>
+                    <form action="" class="link-clothing">
                         <label>
-                            <input type="text" name="type" placeholder="Type">
-                        </label>
-
-                        <label>
-                            <input type="text" name="color" placeholder="Color">
-                        </label>
-
-                        <label>
-                            <input type="text" name="url_shop" placeholder="Shopping link">
-                        </label>
-
-                        <label>
-                            <input type="text" name="style" placeholder="Style">
+                            <select name="clothes" class="clothesSelector">
+                                <option value="">--Choisissez un vêtement à lier--</option>
+                            </select>
                         </label>
 
                         <input type="submit" value="Créer le vêtement">
                     </form>
-                    <ul>
-                        <li>Clothe1</li>
+                    <ul class="clothesList">
                     </ul>
-                        <!--<li>Clothe2
-                            <form action="" class="add-tag">
-                                <label>
-                                    <input type="text" name="name" placeholder="Name">
-                                </label>
-
-                                <input type="submit" value="Créer le tag">
-                            </form>
-                        </li>-->
                 </div>
                 <div class="clothe-tag">
                     <h1>Tag</h1>
-                    <p>#XXX #XXX</p>
+                    <ul class="tagsList">
+                        <li>dqs</li>
+                        <li>dqs</li>
+                    </ul>
                 </div>
             </div>
         </div>
