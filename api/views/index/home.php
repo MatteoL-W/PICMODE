@@ -3,7 +3,7 @@ $generatedTable = '';
 $header = '<tr><th>Route link</th><th>Method</th><th>Short description</th></tr>';
 $controller = '';
 
-for ($i = 0; $i < count($routes); $i++) {
+for ($i = 0, $iMax = count($routes); $i < $iMax; $i++) {
     $url = $routes[$i][0];
     $method = $routes[$i][1]['method'];
     $desc = $routes[$i][1]['desc'];

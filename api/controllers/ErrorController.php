@@ -11,6 +11,6 @@ class ErrorController
 
     public static function errorController()
     {
-        echo "erreur de controlleur";
+        return_view('error/errorController', []);
     }
 }

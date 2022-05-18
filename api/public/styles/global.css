@@ -7,6 +7,11 @@ body {
     box-sizing: border-box;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -169,4 +174,19 @@ table tr:hover td {
 .description span {
     display: block;
     font-style: italic;
+}
+
+.erreur {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: #f3f3f3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #424242;
+}
+
+.erreur a {
+    color: #1c5fff;
 }
