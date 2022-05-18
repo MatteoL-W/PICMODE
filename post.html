@@ -5,15 +5,92 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/clothe.css">
     <title>ToDo</title>
 </head>
 <body>
-    <h1>Custom post</h1>
+<!-- The feed will be filled in js -->
+<header>
+    <nav>
+        <a class="nav" href="#"><img alt="picmode logo" class="logo" src=""/>PICMODE</a>
+        <a class="nav" href="#">For you</a>
+        <a class="nav" href="#">Following</a>
+        <div class="nav">
+            <a href="#">User name
+                <div class="profil_picture"></div>
+            </a>
+        </div>
+    </nav>
+</header>
 
-    <!-- The feed will be filled in js -->
-    <div class="post"></div>
 
-    <script src="scripts/post.js" type="module"></script>
+<!-- all the content -->
+<main>
+
+    <!--Content-->
+    <section>
+        <div class="clothe">
+            <div class="clothe-picture">
+                <img class="dynamic-picture" src="assets/img/clothe.jpg" alt="User">
+            </div>
+
+            <div class="clothe-description">
+                <div class="clothe-legend">
+                    <h1>Legend</h1>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+                <div class="clothe-wardrobe">
+                    <h1>Clothes</h1>
+                    <form action="" class="add-clothing">
+                        <label>
+                            <input type="text" name="type" placeholder="Type">
+                        </label>
+
+                        <label>
+                            <input type="text" name="color" placeholder="Color">
+                        </label>
+
+                        <label>
+                            <input type="text" name="url_shop" placeholder="Shopping link">
+                        </label>
+
+                        <label>
+                            <input type="text" name="style" placeholder="Style">
+                        </label>
+
+                        <input type="submit" value="Créer le vêtement">
+                    </form>
+                    <ul>
+                        <li>Clothe1</li>
+                    </ul>
+                        <!--<li>Clothe2
+                            <form action="" class="add-tag">
+                                <label>
+                                    <input type="text" name="name" placeholder="Name">
+                                </label>
+
+                                <input type="submit" value="Créer le tag">
+                            </form>
+                        </li>-->
+                </div>
+                <div class="clothe-tag">
+                    <h1>Tag</h1>
+                    <p>#XXX #XXX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+<footer>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id doloremque facere aperiam rem cupiditate, sunt
+        explicabo quo esse eum molestias, eius impedit itaque fuga minima quod sit. Maxime, provident animi!</p>
+    <p class="copyright">©picmode-2022</p>
+</footer>
+
+<script src="scripts/post.js" type="module"></script>
 </body>
 </html>

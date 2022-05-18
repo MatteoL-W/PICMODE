@@ -12,13 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     useFetch('/S2_PHP/api/post/' + postId, 'GET')
         .then(response => {
-            // Quand on récupère les résultats, on les affiche
-            displayPost(response, '.post');
+            document.querySelector('.dynamic-picture').src = '/S2_PHP/api' + response.picture
+            document.querySelector('.clothe-legend p').innerHTML = response.description
         })
 });
-
-function displayPost(post, selector) {
-    // je recommande d'utiliser la fonction generatePostHtml(post) du module postTools.js pour
-    // afficher le post en question en évitant les doublons de code
-    console.log(post)
-}
