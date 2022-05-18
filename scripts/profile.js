@@ -58,10 +58,44 @@ function displayProfile(profile, selector, userId) {
 
     useFetch('/S2_PHP/api/post/getAllPostsFromUserId/' + userId, 'GET', {})
         .then(response => {
-            console.log(response)
             displayPosts(response, '.posts')
         })
 
+
+    //bouton pour s'abonner
+    const follow = document.querySelector('.follow');
+    follow.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (userId !== sessionStorage.getItem('fashion_token')) { //si le profile n'est pas celui de la personne connectée
+            console.log("the profile is not the profile of the connected user")
+
+            useFetch('/S2_PHP/api/following/getFollowers/' + userId, 'GET', {}) //si la personne n'est pas déjà abonnée
+                .then(response => {
+                    for (let i = 0; i < response.length; i++) {
+                        if (response[i].id === sessionStorage.getItem('fashion_token')) {
+                            console.log("already following")
+                            return;
+                        }
+                    }
+
+                    useFetch('/S2_PHP/api/following/', 'POST', {
+                        idFollowing : userId,
+                        idFollower : sessionStorage.getItem('fashion_token')
+                    }).then(response => {
+                        console.log("followed")
+                    })
+                })
+        }
+        /*
+        useFetch('/S2_PHP/api/following/', 'POST', {
+            idFollowing : userId,
+            idFollower : sessionStorage.getItem('fashion_token')
+        }).then(response => {
+            console.log("followed")
+        })
+*/
+    })
 
     console.log(profile)
 }
