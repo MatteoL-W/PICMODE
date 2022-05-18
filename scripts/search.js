@@ -1,5 +1,4 @@
 import {useFetch} from "./modules/fetchTools.js";
-import {displayPosts} from "./modules/postTools.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     const queryString = window.location.search;
@@ -12,15 +11,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    /*useFetch('untruc', 'GET')
+    useFetch('/S2_PHP/api/search/getAllUsersFromPseudo/', 'GET', {
+        'mot' : search
+    })
         .then(response => {
-            // Quand on récupère les résultats, on les affiche
-            displaySearch(response, '.search');
-        })*/
+            console.log(response)
+            displaySearch(response, '.result')
+        })
 
 });
 
 function displaySearch(search, selector) {
     // afficher les résultats de recherches
+
     console.log(search)
 }
