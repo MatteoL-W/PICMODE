@@ -29,25 +29,31 @@ class PostController
 
     public function getAllPostsFromUserId(int $id)
     {
-        $post=$this->post->selectAllPostsFromUserId($id);
+        $post = $this->post->selectAllPostsFromUserId($id);
         return_json(json_encode($post));
     }
 
     public function countPosts(int $id)
     {
-        $post=$this->post->countPostsFromUserId($id);
+        $post = $this->post->countPostsFromUserId($id);
         return_json(json_encode($post));
     }
 
-    public function getAllPosts(int $id)
+    public function getAllPosts()
     {
-        $post=$this->post->selectAllPostsWithUsers($id);
+        $post = $this->post->selectAllPostsWithUsers();
         return_json(json_encode($post));
     }
 
     public function getLoggedPosts(int $id)
     {
-        $post=$this->post->selectAllFollowedPostsFromLoggedUser($id);
+        $post = $this->post->selectAllFollowedPostsFromLoggedUser($id);
+        return_json(json_encode($post));
+    }
+
+    public function getAllPostsFromTagId(int $id)
+    {
+        $post = $this->post->selectAllPostsFromTagId($id);
         return_json(json_encode($post));
     }
 

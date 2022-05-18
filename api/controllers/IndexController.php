@@ -13,21 +13,9 @@ class IndexController
         ]);
     }
 
-    public function about()
+    public function demo_view()
     {
         // load about
-        return_view('index/about', []);
-    }
-
-    public function test(int $id)
-    {
-        $example = new Example;
-        $example = $example->selectAll();
-        return_json(json_encode($example));
-    }
-
-    public function test2(int $id, int $id2)
-    {
-        var_dump($id, $id2);
+        return_view('index/demo', []);
     }
 }

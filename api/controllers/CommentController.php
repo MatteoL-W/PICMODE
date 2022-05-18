@@ -29,7 +29,7 @@ class CommentController
         $data = json_decode(file_get_contents("php://input"));
 
         if (isset($data->text, $data->idUser, $data->idPost)
-            && is_string($data->text) && is_numeric($data->idUser)  && is_numeric($data->idPost)) {
+            && is_string($data->text) && is_numeric($data->idUser) && is_numeric($data->idPost)) {
             if (!$this->comment->create($data->text, $data->idUser, $data->idPost)) {
                 return;
             }
@@ -47,6 +47,12 @@ class CommentController
         if ($this->comment->update($id, $data)) {
             $this->read();
         }
+    }
+
+    public function getCommentsFromPost(int $id)
+    {
+        $comment = $this->comment->selectAllCommentsFromPost($id);
+        return_json(json_encode($comment));
     }
 
     public function delete(int $id): void

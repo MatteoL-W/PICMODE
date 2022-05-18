@@ -1,7 +1,6 @@
 <?php
 
 use Controllers\ErrorController;
-use Controllers\IndexController;
 
 /**
  * Ce fichier compare l'ensemble des routes à la page couramment exécuté
@@ -19,7 +18,7 @@ require_once('routes.php');
 // Redefine the access URI
 $uriAccess = explode('/', $_SERVER['REQUEST_URI']);
 
-if ($uriAccess[count($uriAccess) - 1] != '') {
+if ($uriAccess[count($uriAccess) - 1] !== '') {
     $uriAccess[count($uriAccess)] = '';
 }
 
@@ -35,24 +34,22 @@ if (is_numeric($uriAccess[count($uriAccess) - 2])) {
     if ($isDoubleIdRoute) {
         $id2 = $uriAccess[count($uriAccess) - 2];
         $uriAccess[count($uriAccess) - 2] = '{id2}';
-    }
-
-    else {
+    } else {
         $id = $uriAccess[count($uriAccess) - 2];
         $uriAccess[count($uriAccess) - 2] = '{id}';
     }
 }
 
 // Get the current route
-for ($i = 0; $i < count($router); $i++) {
+for ($i = 0, $iMax = count($router); $i < $iMax; $i++) {
     $realUriAccess = implode('/', $uriAccess);
     $routeName = API_FOLDER_ACCESS . $router[$i][0];
 
     /* Vérification de la route et de la méthode */
-    if ($routeName == $realUriAccess) {
+    if ($routeName === $realUriAccess) {
         $requestedMethod = $router[$i][1]['method'];
 
-        if ($_SERVER['REQUEST_METHOD'] == strtoupper($requestedMethod)) {
+        if ($_SERVER['REQUEST_METHOD'] === strtoupper($requestedMethod)) {
             $currentRoute = $router[$i];
             break;
         }
@@ -73,11 +70,11 @@ if ($currentRoute) {
                 $data['router'] = $router;
             }
 
-            if ($id != -1) {
+            if ($id !== -1) {
                 $data['id'] = $id;
             }
 
-            if ($id2 != -1) {
+            if ($id2 !== -1) {
                 $data['id2'] = $id2;
             }
 
