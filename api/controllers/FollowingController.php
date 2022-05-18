@@ -19,22 +19,26 @@ class FollowingController
         return_json(json_encode($all));
     }
 
-    public function getFollowers(int $id) {
+    public function getFollowers(int $id)
+    {
         $followers = $this->following->selectAllFollowersFromUserId($id);
         return_json(json_encode($followers));
     }
 
-    public function getFollowing(int $id) {
+    public function getFollowing(int $id)
+    {
         $following = $this->following->selectAllFollowingFromUserId($id);
         return_json(json_encode($following));
     }
 
-    public function countFollowers(int $id) {
+    public function countFollowers(int $id)
+    {
         $followers = $this->following->countFollowersFromUserId($id);
         return_json(json_encode($followers));
     }
 
-    public function countFollowing(int $id) {
+    public function countFollowing(int $id)
+    {
         $following = $this->following->countFollowingFromUserId($id);
         return_json(json_encode($following));
     }
