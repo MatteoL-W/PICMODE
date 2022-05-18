@@ -39,9 +39,9 @@ class PostController
         return_json(json_encode($post));
     }
 
-    public function getAllPosts(int $id)
+    public function getAllPosts()
     {
-        $post=$this->post->selectAllPostsWithUsers($id);
+        $post=$this->post->selectAllPostsWithUsers();
         return_json(json_encode($post));
     }
 
