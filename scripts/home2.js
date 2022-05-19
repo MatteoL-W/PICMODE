@@ -45,6 +45,15 @@ window.addEventListener('DOMContentLoaded', () => {
             displayPosts(response, '.section');
         })
 
+    //profile picture
+    useFetch('/S2_PHP/api/user/'+userId, 'GET')
+        .then(response => {
+            console.log(response);
+            document.querySelector('.profil_name').innerHTML = response.pseudo;
+            document.querySelector('.profil_name').setAttribute('href', 'profile.html?user='+response.id);
+            document.querySelector('.profil_picture').src = '/S2_PHP/api/' + response.profile_picture;
+        })
+
 
 
 });

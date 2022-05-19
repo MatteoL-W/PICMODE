@@ -8,6 +8,9 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    .on {
+      color: #AA1B2D; !important;
+    }
     .nav {
       align-items: center;
       width: 10vw;
