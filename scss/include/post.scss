@@ -1,35 +1,3 @@
-/*.card {
-  background: gray;
-  padding: 50px;
-}*/
-
-@import 'include/header';
-@import 'include/footer';
-@import 'include/index';
-@import 'include/post';
-
-
-/* button */
-.add_content {
-  width: 15vw;
-  align-items: center;
-
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  border: 1px solid #AA1B2D;
-  border-radius: 30px;
-  padding: 0;
-  margin: 20px auto;
-}
-
-/* content */
-main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-}
-
 /* posts section */
 .section {
   display: flex;
@@ -130,14 +98,3 @@ main {
     margin: 2vh 1vw;
   }
 }
-
-
-
-
-
-
-
-
-
-
-

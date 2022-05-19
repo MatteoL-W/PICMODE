@@ -63,6 +63,75 @@ body {
   font-family: "Segoe UI";
   src: url("/assets/font/segeoui.ttf") format("ttf"); }
 
+/* posts section */
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 5vh; }
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30%;
+  border: 1px solid #AA1B2D;
+  margin: 1vw 1vh; }
+  .post .head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1vh 1vw; }
+    .post .head .hour {
+      display: flex;
+      align-items: center; }
+    .post .head .right {
+      display: flex;
+      align-items: center; }
+      .post .head .right .pictureProfil {
+        min-width: 50px;
+        max-width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover; }
+  .post .post_picture {
+    max-width: 23vw;
+    margin: auto;
+    margin: 1vh 1vw;
+    /* max-height: auto; */ }
+  .post .foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1vh 1vw; }
+    .post .foot .tags {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      flex-wrap: wrap; }
+      .post .foot .tags .tag {
+        display: flex;
+        justify-content: center;
+        padding: 1vh 1vw;
+        border: 1px solid #AA1B2D;
+        border-radius: 30px;
+        width: auto;
+        align-items: center;
+        margin: auto; }
+    .post .foot .post_button {
+      display: flex;
+      justify-content: end;
+      margin: 1vh 1vw; }
+      .post .foot .post_button .react {
+        padding: 0;
+        margin: 2%; }
+        .post .foot .post_button .react .react img {
+          width: 1.5vw; }
+  .post .description {
+    margin: 2vh 1vw; }
+
 /* button */
 .add_content {
   width: 15vw;

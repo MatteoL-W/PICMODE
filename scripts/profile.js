@@ -89,13 +89,22 @@ function displayProfile(profile, selector, userId) {
 
     // faire le trait séparateur
 
+    //
+
     //posts
-    const posts = document.querySelector('.posts');
+    useFetch('/S2_PHP/api/post/getAllPostsFromUserId/' + userId, 'GET')
+        .then(response => {
+            console.log(response)
+            // Quand on récupère les résultats, on les affiche
+            displayPosts(response, '.section');
+        })
+
+    /*const posts = document.querySelector('.posts');
 
     useFetch('/S2_PHP/api/post/getAllPostsFromUserId/' + userId, 'GET', {})
         .then(response => {
             displayPosts(response, '.posts')
-        })
+        })*/
 
 
 
