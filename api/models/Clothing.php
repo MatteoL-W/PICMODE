@@ -21,4 +21,12 @@ class Clothing extends BaseModel
         $this->db->bind(':id', $id);
         return $this->db->fetchAll();
     }
+
+    //Méthode pour selectionner tous les posts d'un User
+    public function selectAllClothesFromUserId(int $idUser)
+    {
+        $this->db->query("SELECT clothing.* FROM clothing INNER JOIN contains ON clothing.id = contains.idClothing INNER JOIN post ON contains.idPost = post.id INNER JOIN user On post.idUser = user.id WHERE user.id = :id");
+        $this->db->bind(':id', $idUser);
+        return $this->db->fetchAll();
+    }
 }
