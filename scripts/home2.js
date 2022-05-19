@@ -1,7 +1,6 @@
 import {toBase64, useFetch} from "./modules/fetchTools.js";
 import {displayPosts} from "./modules/postTools.js";
 import {clear, getDate} from "./modules/tools";
-import {createImage} from "./modules/htmlTools";
 
 window.addEventListener('DOMContentLoaded', () => {
     let postForm = document.querySelector('.postForm');
@@ -37,15 +36,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    // Fil d'actualité
-    useFetch('/S2_PHP/api/post/getAllPosts/', 'GET')
+    // Fil d'actualité des personnes suivi
+    const userId = sessionStorage.getItem('fashion_token')
+    useFetch('/S2_PHP/api/post/getLoggedPosts/' + userId, 'GET')
         .then(response => {
+            console.log(response)
             // Quand on récupère les résultats, on les affiche
             displayPosts(response, '.section');
         })
 
     //profile picture
-    const userId = sessionStorage.getItem('fashion_token')
     useFetch('/S2_PHP/api/user/'+userId, 'GET')
         .then(response => {
             console.log(response);
@@ -53,7 +53,6 @@ window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.profil_name').setAttribute('href', 'profile.html?user='+response.id);
             document.querySelector('.profil_picture').src = '/S2_PHP/api/' + response.profile_picture;
         })
-
 
 
 

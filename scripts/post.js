@@ -1,4 +1,5 @@
 import {useFetch} from "./modules/fetchTools.js";
+import {generatePostHtml} from "./modules/postTools";
 
 window.addEventListener('DOMContentLoaded', () => {
     const queryString = window.location.search;
@@ -13,12 +14,13 @@ window.addEventListener('DOMContentLoaded', () => {
     useFetch('/S2_PHP/api/post/' + postId, 'GET')
         .then(response => {
             // Quand on récupère les résultats, on les affiche
-            displayPost(response, '.post');
+            displayPost(response, '.section');
         })
 });
 
 function displayPost(post, selector) {
     // je recommande d'utiliser la fonction generatePostHtml(post) du module postTools.js pour
     // afficher le post en question en évitant les doublons de code
-    console.log(post)
+    let postGenerated = generatePostHtml(post)
+    document.querySelector(selector).appendChild(postGenerated);
 }

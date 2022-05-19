@@ -14,6 +14,15 @@ class Post extends BaseModel
         return $this->createFromArray($values, $keys);
     }
 
+    public function select(int $id)
+    {
+        $this->db->query("SELECT post.*, user.id, user.pseudo, user.name, user.firstname, user.profile_picture FROM post JOIN user on user.id = post.idUser WHERE post.id = :id");
+        $this->db->bind(':id', $id);
+        return $this->db->fetch();
+    }
+
+
+
     //Méthode pour selectionner tous les posts d'un User
     public function selectAllPostsFromUserId(int $idUser)
     {
@@ -32,13 +41,13 @@ class Post extends BaseModel
 
     //Méthode pour selectionner tous les posts publiés
     public function selectAllPostsWithUsers(){
-        $this->db->query("SELECT post.*, user.pseudo FROM post INNER JOIN user ON post.idUser = user.id ORDER BY date DESC");
+        $this->db->query("SELECT post.*, user.pseudo, user.profile_picture FROM post INNER JOIN user ON post.idUser = user.id ORDER BY date DESC");
         return $this->db->fetchAll();
     }
 
     //Méthode pour selectionner tous les posts publiés par les Users suivies
     public function selectAllFollowedPostsFromLoggedUser (int $idUser){
-        $this->db->query("SELECT post.*, user1.pseudo FROM post INNER JOIN user AS user1 ON post.idUser = user1.id INNER JOIN following ON user1.id = following.idFollowing INNER JOIN user AS user2 ON following.idFollower = user2.id WHERE idFollower=:id ORDER BY date DESC");
+        $this->db->query("SELECT post.*, user1.pseudo, user1.profile_picture FROM post INNER JOIN user AS user1 ON post.idUser = user1.id INNER JOIN following ON user1.id = following.idFollowing INNER JOIN user AS user2 ON following.idFollower = user2.id WHERE idFollower=:id ORDER BY date DESC");
         $this->db->bind(':id', $idUser);
         return $this->db->fetchAll();
     }
