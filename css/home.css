@@ -13,10 +13,10 @@ header {
     flex-direction: row;
     justify-content: space-around; }
     header nav .on {
-      color: #AA1B2D; }
+      color: #AA1B2D;
+      font-weight: bold; }
     header nav .nav {
       align-items: center;
-      width: 10vw;
       padding: 1.2em;
       display: flex;
       flex-direction: row; }
@@ -27,7 +27,8 @@ header {
         max-width: 50px;
         height: 50px;
         border-radius: 50%;
-        object-fit: cover; }
+        object-fit: cover;
+        margin-left: 15px; }
 
 footer {
   background-color: #707070;
@@ -101,7 +102,8 @@ body {
         max-width: 50px;
         height: 50px;
         border-radius: 50%;
-        object-fit: cover; }
+        object-fit: cover;
+        margin-left: 8px; }
   .post .post_picture {
     max-width: 23vw;
     margin: 1vh 1vw;
@@ -163,3 +165,18 @@ main {
   flex-wrap: wrap;
   width: 100%;
   margin-bottom: 5vh; }
+
+h1 {
+  margin-top: 20px;
+  padding-left: 2%; }
+
+.postForm {
+  padding-left: 2%;
+  width: 100vw;
+  margin-top: 20px;
+  margin-bottom: 50px; }
+  .postForm label {
+    width: 100vw; }
+  .postForm textarea {
+    width: 80%;
+    height: 100px; }

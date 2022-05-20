@@ -10,9 +10,8 @@ export function displayPosts(posts, selector) {
 export function generatePostHtml(post) {
     // A post have a "description", a "picture", a "date" and will have an idAuthor -> "pseudo" / "name" / "firstName" / "profile_picture"
     //pseudo
-    const postUserName = createElementAndText('a', post.pseudo);
+    const postUserName = createElementAndText('div', post.pseudo);
     postUserName.classList.add('user');
-    postUserName.setAttribute('href', 'profile.html?user='+post.idUser)
 
     //date
     const postDate = createElementAndText('p', post.date);
@@ -30,7 +29,10 @@ export function generatePostHtml(post) {
 
     const card = createDiv(['post']);
     const head = createDiv(['head']);
-    const author = createDiv(['right']);
+    const author = document.createElement('a');
+    author.classList.add('right')
+    author.setAttribute('href', 'profile.html?user=' + post.idUser)
+
     const content = document.createElement('a');
     content.classList.add('content')
     content.setAttribute('href', '/S2_PHP/post?postId=' + post.id)

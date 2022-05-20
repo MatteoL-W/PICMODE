@@ -27,25 +27,6 @@ function displayProfile(profile, selector, userId) {
     unfollow.style.display = 'none'
     follow.style.display = 'block'
 
-    if (userId === sessionStorage.getItem('fashion_token')) {
-        unfollow.style.display = 'none'
-        follow.style.display = 'none'
-        return
-    }
-
-    // Abonnés
-    useFetch('/S2_PHP/api/following/getFollowers/' + userId, 'GET')
-        .then(response => {
-            let followersIndex = 0;
-            for (followersIndex; followersIndex < response.length; followersIndex++) {
-                if (response[followersIndex].id === sessionStorage.getItem('fashion_token')) {
-                    unfollow.style.display = 'block'
-                    follow.style.display = 'none'
-                    return;
-                }
-            }
-        })
-
     const followersNumberElement = document.querySelector('.followers');
 
     useFetch('/S2_PHP/api/following/countFollowers/' + userId, 'GET', {})
@@ -70,6 +51,25 @@ function displayProfile(profile, selector, userId) {
         .then(response => {
             profilePictureElement.src = '/S2_PHP/api/' + response.profile_picture;
             usernameElement.innerHTML = response.pseudo;
+        })
+
+    if (userId === sessionStorage.getItem('fashion_token')) {
+        unfollow.style.display = 'none'
+        follow.style.display = 'none'
+        return
+    }
+
+    // Abonnés
+    useFetch('/S2_PHP/api/following/getFollowers/' + userId, 'GET')
+        .then(response => {
+            let followersIndex = 0;
+            for (followersIndex; followersIndex < response.length; followersIndex++) {
+                if (response[followersIndex].id === sessionStorage.getItem('fashion_token')) {
+                    unfollow.style.display = 'block'
+                    follow.style.display = 'none'
+                    return;
+                }
+            }
         })
 
     // Bouton de follow
