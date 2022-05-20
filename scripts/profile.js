@@ -1,7 +1,9 @@
 import {useFetch} from "./modules/fetchTools.js";
 import {displayPosts} from "./modules/postTools.js";
+import {header, needToLogin} from "./modules/tools";
 
 window.addEventListener('DOMContentLoaded', () => {
+    needToLogin();
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const userId = urlParams.get('user')
@@ -19,6 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(response => {
             displayPosts(response, '.section');
         })
+
+    header();
 });
 
 function displayProfile(profile, selector, userId) {

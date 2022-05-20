@@ -1,7 +1,10 @@
 import {useFetch} from "./modules/fetchTools.js";
 import {generatePostHtml} from "./modules/postTools";
+import {header, needToLogin} from "./modules/tools";
 
 window.addEventListener('DOMContentLoaded', () => {
+    header();
+    needToLogin();
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const postId = urlParams.get('postId')

@@ -1,6 +1,8 @@
 import {useFetch} from "./modules/fetchTools.js";
+import {header, needToLogin} from "./modules/tools";
 
 window.addEventListener('DOMContentLoaded', () => {
+    needToLogin();
     let clotheForm = document.querySelector('.add-clothing')
     let selector = document.querySelector('.add-clothing select')
 
@@ -40,6 +42,6 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
 
-
+        header();
     });
 });

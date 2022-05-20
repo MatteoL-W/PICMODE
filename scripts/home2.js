@@ -1,8 +1,9 @@
 import {toBase64, useFetch} from "./modules/fetchTools.js";
 import {displayPosts} from "./modules/postTools.js";
-import {clear, getDate} from "./modules/tools";
+import {clear, getDate, header, needToLogin} from "./modules/tools";
 
 window.addEventListener('DOMContentLoaded', () => {
+    needToLogin();
     let postForm = document.querySelector('.postForm');
     postForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -45,15 +46,5 @@ window.addEventListener('DOMContentLoaded', () => {
             displayPosts(response, '.section');
         })
 
-    //profile picture
-    useFetch('/S2_PHP/api/user/'+userId, 'GET')
-        .then(response => {
-            console.log(response);
-            document.querySelector('.profil_name').innerHTML = response.pseudo;
-            document.querySelector('.profil_name').setAttribute('href', 'profile.html?user='+response.id);
-            document.querySelector('.profil_picture').src = '/S2_PHP/api/' + response.profile_picture;
-        })
-
-
-
+    header();
 });

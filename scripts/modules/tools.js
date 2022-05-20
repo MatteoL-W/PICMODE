@@ -1,3 +1,5 @@
+import {useFetch} from "./fetchTools";
+
 /**
  * @brief Get Y-m-d current date
  * @returns {string}
@@ -12,4 +14,25 @@ export function getDate() {
 
 export function clear(classname) {
     document.querySelector(classname).innerHTML = '';
+}
+
+export function header() {
+    const userId = sessionStorage.getItem('fashion_token')
+    if (userId) {
+        useFetch('/S2_PHP/api/user/'+userId, 'GET')
+            .then(response => {
+                document.querySelector('.profil_name').innerHTML = response.pseudo;
+                document.querySelector('.profil_name').setAttribute('href', 'profile.html?user='+response.id);
+                document.querySelector('.profil_picture').src = '/S2_PHP/api/' + response.profile_picture;
+            })
+    }
+
+}
+
+export function needToLogin() {
+    if (!sessionStorage.getItem('fashion_token')) {
+        alert("you must login")
+        window.location.href = "/S2_PHP/login";
+        return
+    }
 }

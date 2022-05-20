@@ -1,8 +1,9 @@
 import {toBase64, useFetch} from "./modules/fetchTools.js";
-import {clear, getDate} from "./modules/tools";
+import {clear, getDate, header, needToLogin} from "./modules/tools";
 import {displayPosts} from "./modules/postTools";
 
 window.addEventListener('DOMContentLoaded', () => {
+    needToLogin();
     let tagForm = document.querySelector('.add-tag')
     tagForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -22,6 +23,6 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
 
-
+        header();
     });
 });
