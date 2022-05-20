@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/clothe.css">
+    <link rel="stylesheet" href="css/home.css">
     <title>ToDo</title>
 </head>
 <body>
@@ -26,46 +27,29 @@
 
 <!-- all the content -->
 <main>
+    <section class="section"></section>
+    <div class="clothe-wardrobe">
+        <h1>Post</h1>
+        <a href="createClothe.html" style="text-decoration: underline">Create a clothe</a>
+        <form action="" class="link-clothing">
+            <label>
+                <select name="clothes" class="clothesSelector">
+                    <option value="">--Choisissez un vêtement à lier--</option>
+                </select>
+            </label>
 
-    <!--Content-->
-    <section>
-        <div class="clothe">
-            <div class="clothe-picture">
-                <img class="dynamic-picture" src="assets/img/clothe.jpg" alt="User">
-            </div>
-
-            <div class="clothe-description">
-                <div class="clothe-legend">
-                    <h1>Legend</h1>
-                    <p>Lorem ipsum dolor sit amet...</p>
-                </div>
-                <div class="clothe-wardrobe">
-                    <h1>Post</h1>
-                    <a href="createClothe.html" style="text-decoration: underline">Create a clothe</a>
-                    <form action="" class="link-clothing">
-                        <label>
-                            <select name="clothes" class="clothesSelector">
-                                <option value="">--Choisissez un vêtement à lier--</option>
-                            </select>
-                        </label>
-
-                        <input type="submit" value="Créer le vêtement">
-                    </form>
-                    <ul class="clothesList">
-                    </ul>
-                </div>
-                <div class="clothe-tag">
-                    <h1>Tag</h1>
-                    <ul class="tagsList">
-                        <li>dqs</li>
-                        <li>dqs</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
+            <input type="submit" value="Créer le vêtement">
+        </form>
+        <ul class="clothesList">
+        </ul>
+    </div>
+    <div class="clothe-tag">
+        <h1>Tag</h1>
+        <ul class="tagsList">
+            <li>dqs</li>
+            <li>dqs</li>
+        </ul>
+    </div>
 </main>
 
 

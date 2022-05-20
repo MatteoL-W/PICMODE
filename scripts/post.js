@@ -1,4 +1,5 @@
 import {useFetch} from "./modules/fetchTools.js";
+import {generatePostHtml} from "./modules/postTools";
 
 window.addEventListener('DOMContentLoaded', () => {
     const queryString = window.location.search;
@@ -17,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
             if (response) {
                 for (let i = 0; i < response.length; i++) {
                     let opt = document.createElement('option');
-                    opt.appendChild( document.createTextNode(response[i].type + " / " + response[i].color ) );
+                    opt.appendChild(document.createTextNode(response[i].type + " / " + response[i].color));
                     opt.value = response[i].id;
                     selector.appendChild(opt);
                 }
@@ -27,6 +28,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // get info of the post
     useFetch('/S2_PHP/api/post/' + postId, 'GET')
         .then(response => {
+            displayPost(response, '.section');
+
             document.querySelector('.dynamic-picture').src = '/S2_PHP/api' + response.picture
             document.querySelector('.clothe-legend p').innerHTML = response.description
         })
@@ -37,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(response => {
             for (let i = 0; i < response.length; i++) {
                 let li = document.createElement('li');
-                li.appendChild( document.createTextNode(response[i].type ) );
+                li.appendChild(document.createTextNode(response[i].type));
                 clothesList.appendChild(li);
             }
         })
@@ -68,3 +71,10 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     });
 });
+
+function displayPost(post, selector) {
+    // je recommande d'utiliser la fonction generatePostHtml(post) du module postTools.js pour
+    // afficher le post en question en évitant les doublons de code
+    let postGenerated = generatePostHtml(post)
+    document.querySelector(selector).appendChild(postGenerated);
+}

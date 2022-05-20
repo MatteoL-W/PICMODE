@@ -4,7 +4,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3vh 6vw; }
+  padding: 3vh 6vw;
+  text-align: center; }
   footer .copyright {
     margin: auto;
     font-style: italic; }
