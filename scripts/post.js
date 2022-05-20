@@ -29,9 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
     useFetch('/S2_PHP/api/post/' + postId, 'GET')
         .then(response => {
             displayPost(response, '.section');
-
-            document.querySelector('.dynamic-picture').src = '/S2_PHP/api' + response.picture
-            document.querySelector('.clothe-legend p').innerHTML = response.description
         })
 
     // Display the clothes list

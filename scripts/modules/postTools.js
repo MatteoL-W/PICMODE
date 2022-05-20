@@ -31,11 +31,15 @@ export function generatePostHtml(post) {
     const head = createDiv(['head']);
     const author = document.createElement('a');
     author.classList.add('right')
-    author.setAttribute('href', 'profile.html?user=' + post.idUser)
+    if (post.idUser) {
+        author.setAttribute('href', 'profile.html?user=' + post.idUser)
+    }
 
     const content = document.createElement('a');
     content.classList.add('content')
-    content.setAttribute('href', '/S2_PHP/post?postId=' + post.id)
+    if (!window.location.href.includes('postId')) {
+        content.setAttribute('href', '/S2_PHP/post?postId=' + post.id)
+    }
 
     card.appendChild(head);
     head.appendChild(postDate);
