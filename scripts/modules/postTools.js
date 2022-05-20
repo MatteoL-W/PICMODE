@@ -19,44 +19,35 @@ export function generatePostHtml(post) {
     postDate.classList.add('hour');
 
     //profile_picture
-    const postUserPicture = createImage('api/' + post.profile_picture);
+    const postUserPicture = createImage('/S2_PHP/api' + post.profile_picture);
     postUserPicture.classList.add('pictureProfil');
 
     //picture
-    const postPicture = createImage('api/' + post.picture);
-
+    const postPicture = createImage('/S2_PHP/api' + post.picture);
 
     //description
     const postDescription = createElementAndText('p', post.description);
 
-    //tags
-    //const postTag = createElementAndText('a', post.tag);
-
-    //like
-    //const postLike = createElementAndText('a', post.react);
-    //const postLikeImg = createImage('api/' + post.like);
-
-    //add
-    //const postAdd = createElementAndText('a', post.react);
-    //const postAddimg = createImage('api/' + post.add);
-
-
     const card = createDiv(['post']);
     const head = createDiv(['head']);
-    const right = createDiv(['right']);
+    const author = createDiv(['right']);
+    const content = document.createElement('a');
+    content.classList.add('content')
+    content.setAttribute('href', '/S2_PHP/post?postId=' + post.id)
+
     card.appendChild(head);
     head.appendChild(postDate);
-    head.appendChild(right);
-    right.appendChild(postUserName);
-    right.appendChild(postUserPicture);
-    card.appendChild(postPicture);
+    head.appendChild(author);
+    author.appendChild(postUserName);
+    author.appendChild(postUserPicture);
+    card.appendChild(content);
+    content.appendChild(postPicture);
+    content.appendChild(postDescription);
     //const foot = createDiv(['foot']);
     //const tags = createDiv(['tags']);
     //const react = createDiv(['post_button']);
     //foot.appendChild(tags);
     //tags.appendChild()
-
-    card.appendChild(postDescription);
 
 
     return card;

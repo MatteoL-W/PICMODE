@@ -79,6 +79,8 @@ body {
   width: 30%;
   border: 1px solid #AA1B2D;
   margin: 1vw 1vh; }
+  .post .content img {
+    width: 100%; }
   .post .head {
     display: flex;
     flex-direction: row;
@@ -98,7 +100,6 @@ body {
         object-fit: cover; }
   .post .post_picture {
     max-width: 23vw;
-    margin: auto;
     margin: 1vh 1vw;
     /* max-height: auto; */ }
   .post .foot {
