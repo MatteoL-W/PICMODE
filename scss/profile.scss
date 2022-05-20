@@ -17,11 +17,10 @@
   margin: 20px auto;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-
 
 
   /* profile section */
@@ -34,13 +33,12 @@ main{
     .profile {
       padding: 5rem 0;
 
-      .profile-picture{
-
+      .profile-picture {
         display: flex;
         justify-content: center;
         align-items: center;
 
-        img{
+        img {
           min-width: 200px;
           max-width: 200px;
           height: 200px;
@@ -49,7 +47,7 @@ main{
         }
       }
 
-      .profile-user{
+      .profile-user {
         display: flex;
         flex-direction: column;
         font-size: 1.7rem;
@@ -57,12 +55,12 @@ main{
         align-items: center;
       }
 
-      .profile-stats{
+      .profile-stats {
         display: flex;
         flex-direction: row;
         gap: 325px;
 
-        .profile-stats-followers{
+        .profile-stats-followers {
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -76,20 +74,15 @@ main{
           color: #AA1B2D;
         }
 
-        .profile-stats-following{
+        .profile-stats-following {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
         }
-
       }
-
     }
-
-
-
-    }
+  }
 }
 
 

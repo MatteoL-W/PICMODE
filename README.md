@@ -11,7 +11,6 @@
 7. Change `api/config/credentials.php` to match your database password.
 8. Import `api/data/php_imac_s2.php` in your database.
 9. Go to http://localhost/S2_PHP/
-10. Execute `SET GLOBAL max_allowed_packet=16777216;` in your SQL Prompt to allow large pictures.
 11. It should be working now !
 
 ## How to create a new CRUD ?
@@ -20,5 +19,3 @@
 2. Upload your new *database* in `api/data/`
 3. Create a new *controller* in `api/controller/`
 4. Add your new *routes* to $router in `api/app/routes.php`
-
-### Check the "Example" CRUD example.

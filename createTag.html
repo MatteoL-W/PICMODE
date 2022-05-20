@@ -6,8 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/clothe.css">
-    <link rel="stylesheet" href="css/home.css">
-    <title>ToDo</title>
+    <title>Create a tag</title>
 </head>
 <body>
 <!-- The feed will be filled in js -->
@@ -27,29 +26,22 @@
 
 <!-- all the content -->
 <main>
-    <section class="section"></section>
-    <div class="clothe-wardrobe">
-        <h1>Post</h1>
-        <a href="createClothe.html" style="text-decoration: underline">Create a clothe</a>
-        <form action="" class="link-clothing">
-            <label>
-                <select name="clothes" class="clothesSelector">
-                    <option value="">--Choisissez un vêtement à lier--</option>
-                </select>
-            </label>
 
-            <input type="submit" value="Créer le vêtement">
-        </form>
-        <ul class="clothesList">
-        </ul>
-    </div>
-    <div class="clothe-tag">
-        <h1>Tag</h1>
-        <ul class="tagsList">
-            <li>dqs</li>
-            <li>dqs</li>
-        </ul>
-    </div>
+    <!--Content-->
+    <section>
+        <div class="clotheCreation">
+            <h1>Tag</h1>
+            <form action="" class="add-tag">
+                <label>
+                    <input type="text" name="name" placeholder="Name">
+                </label>
+
+                <input type="submit" value="Créer le tag">
+            </form>
+        </div>
+    </section>
+
+
 </main>
 
 
@@ -59,6 +51,6 @@
     <p class="copyright">©picmode-2022</p>
 </footer>
 
-<script src="scripts/post.js" type="module"></script>
+<script src="scripts/createTag.js" type="module"></script>
 </body>
 </html>

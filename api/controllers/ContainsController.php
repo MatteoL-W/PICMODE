@@ -19,12 +19,14 @@ class ContainsController
         return_json(json_encode($all));
     }
 
-    public function getClothing(int $id) {
+    public function getClothing(int $id)
+    {
         $clothing = $this->contains->selectAllClothingFromPostId($id);
         return_json(json_encode($clothing));
     }
 
-    public function countClothing(int $id) {
+    public function countClothing(int $id)
+    {
         $clothing = $this->contains->countClothingFromPostId($id);
         return_json(json_encode($clothing));
     }
