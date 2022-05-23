@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // All clothes in selector
     let selector = document.querySelector('.clothesSelector')
-    useFetch('http://localhost/S2_PHP/api/clothing/', 'GET')
+    useFetch('/S2_PHP/api/clothing/', 'GET')
         .then(response => {
             if (response) {
                 for (let i = 0; i < response.length; i++) {
@@ -32,6 +32,10 @@ window.addEventListener('DOMContentLoaded', () => {
     useFetch('/S2_PHP/api/post/' + postId, 'GET')
         .then(response => {
             displayPost(response, '.postPage');
+            console.log(response)
+            if (response.idUser != sessionStorage.getItem('fashion_token')) {
+                document.querySelector('.link-clothing').style.display = 'none';
+            }
         })
 
     // Display the clothes list
@@ -50,9 +54,12 @@ window.addEventListener('DOMContentLoaded', () => {
     useFetch('/S2_PHP/api/tag/getTagFromIdPost/' + postId, 'GET')
         .then(response => {
             for (let i = 0; i < response.length; i++) {
+                let link = document.createElement('a');
+                link.setAttribute('href', '/S2_PHP/tag?tagId=' + response[i].id)
                 let li = document.createElement('li');
-                li.appendChild(document.createTextNode(response[i].name));
-                tagsList.appendChild(li);
+                li.appendChild(document.createTextNode(response[i].name))
+                link.appendChild(li)
+                tagsList.appendChild(link);
             }
         })
 
@@ -69,12 +76,13 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        useFetch('http://localhost/S2_PHP/api/contains', 'POST', {
+        useFetch('/S2_PHP/api/contains', 'POST', {
             idPost: postId,
             idClothing: form.clothes
         }).then(response => {
             if (response) {
                 clear('.clothesList');
+                clear('.tagsList');
                 useFetch('/S2_PHP/api/clothing/getFromPost/' + postId, 'GET')
                     .then(response => {
                         for (let i = 0; i < response.length; i++) {
@@ -83,8 +91,17 @@ window.addEventListener('DOMContentLoaded', () => {
                             clothesList.appendChild(li);
                         }
                     })
+                useFetch('/S2_PHP/api/tag/getTagFromIdPost/' + postId, 'GET')
+                    .then(response => {
+                        for (let i = 0; i < response.length; i++) {
+                            let li = document.createElement('li');
+                            li.appendChild(document.createTextNode(response[i].name));
+                            tagsList.appendChild(li);
+                        }
+                    })
             }
         })
+
     });
 });
 

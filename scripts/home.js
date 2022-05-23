@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        useFetch('http://localhost/S2_PHP/api/post', 'POST', {
+        useFetch('/S2_PHP/api/post/getAllPosts/', 'POST', {
             description: form.description,
             date: getDate(),
             idUser : sessionStorage.getItem('fashion_token'),
@@ -26,8 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }).then(response => {
             if (response) {
                 clear('.section');
-                console.log("post clear")
-                console.log(response)
                 displayPosts(response, '.section');
             }
         })
@@ -37,8 +35,6 @@ window.addEventListener('DOMContentLoaded', () => {
     useFetch('/S2_PHP/api/post/getAllPosts/', 'GET')
         .then(response => {
             // Quand on récupère les résultats, on les affiche
-            console.log("pre clear")
-            console.log(response)
             displayPosts(response, '.section');
         })
     header();

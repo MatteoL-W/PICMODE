@@ -152,6 +152,8 @@ body {
 .infos-clothe {
   display: flex;
   flex-direction: column; }
+  .infos-clothe a {
+    text-decoration: underline; }
 
 /* button */
 .add_content {

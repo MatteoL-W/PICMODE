@@ -55,7 +55,7 @@ class Post extends BaseModel
     //Méthode pour selectionner tous les posts avec un certain tag
     public function selectAllPostsFromTagId(int $idTag)
     {
-        $this->db->query("SELECT post.* FROM post INNER JOIN contains ON contains.idPost = post.id INNER JOIN clothing ON clothing.id = contains.idClothing WHERE idTag = :id ORDER BY date DESC");
+        $this->db->query("SELECT DISTINCT post.*, user.pseudo, user.profile_picture FROM post JOIN user ON user.id = post.idUser INNER JOIN contains ON contains.idPost = post.id INNER JOIN clothing ON clothing.id = contains.idClothing WHERE idTag = :id ORDER BY date DESC");
         $this->db->bind(':id', $idTag);
         return $this->db->fetchAll();
     }

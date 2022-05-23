@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let clotheForm = document.querySelector('.add-clothing')
     let selector = document.querySelector('.add-clothing select')
 
-    useFetch('http://localhost/S2_PHP/api/tag/', 'GET')
+    useFetch('/S2_PHP/api/tag/', 'GET')
         .then(response => {
             if (response) {
                 for (let i = 0; i < response.length; i++) {
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        useFetch('http://localhost/S2_PHP/api/clothing', 'POST', {
+        useFetch('/S2_PHP/api/clothing', 'POST', {
             type: form.type,
             color: form.color,
             url_shop: form.color,

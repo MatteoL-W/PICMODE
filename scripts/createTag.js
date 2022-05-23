@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        useFetch('http://localhost/S2_PHP/api/tag', 'POST', {
+        useFetch('/S2_PHP/api/tag', 'POST', {
             name: form.name
         }).then(response => {
             if (response) {

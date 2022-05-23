@@ -1,0 +1,26 @@
+import {toBase64, useFetch} from "./modules/fetchTools.js";
+import {displayPosts} from "./modules/postTools.js";
+import {clear, getDate, header, needToLogin} from "./modules/tools";
+import {createImage} from "./modules/htmlTools";
+
+window.addEventListener('DOMContentLoaded', () => {
+    needToLogin();
+    header();
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const tagId = urlParams.get('tagId')
+
+    if (!tagId) {
+        // gérer mieux l'erreur
+        alert("merci de sélectionner un tag / http://localhost/S2_PHP/profile.html?tagId=3 par exemple");
+    }
+
+    // Fil d'actualité
+    useFetch('/S2_PHP/api/post/getAllPostsFromTagId/' + tagId, 'GET')
+        .then(response => {
+            // Quand on récupère les résultats, on les affiche
+            displayPosts(response, '.section');
+        })
+    header();
+
+});

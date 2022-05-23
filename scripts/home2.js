@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        useFetch('http://localhost/S2_PHP/api/post', 'POST', {
+        useFetch('/S2_PHP/api/post', 'POST', {
             description: form.description,
             date: getDate(),
             idUser : sessionStorage.getItem('fashion_token'),
