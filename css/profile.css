@@ -64,6 +64,21 @@ body {
   font-family: "Segoe UI";
   src: url("/assets/font/segeoui.ttf") format("ttf"); }
 
+.loginPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .loginPage h1 {
+    margin-bottom: 20px;
+    margin-top: 20px; }
+  .loginPage .loginForm, .loginPage .registerForm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap; }
+
 /* posts section */
 .section {
   display: flex;

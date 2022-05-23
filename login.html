@@ -5,60 +5,62 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/include/index.css">
     <title>ToDo</title>
 </head>
 <body>
 
-<h1>Login</h1>
+<div class="loginPage">
+    <h1>Login</h1>
+    <form action="#" class="loginForm">
+        <label>
+            <input type="text" name="pseudo" placeholder="Pseudo ou mail">
+        </label>
 
-<form action="#" class="loginForm">
-    <label>
-        <input type="text" name="pseudo" placeholder="Pseudo ou mail">
-    </label>
+        <label>
+            <input type="password" name="password" placeholder="Mot de passe">
+        </label>
 
-    <label>
-        <input type="password" name="password" placeholder="Mot de passe">
-    </label>
+        <input type="submit" value="Connexion">
+    </form>
 
-    <input type="submit" value="Connexion">
-</form>
+    <h1>Inscription</h1>
 
-<h1>Inscription</h1>
+    <form action="#" class="registerForm">
+        <label>
+            <input type="text" name="pseudo" placeholder="Pseudo">
+        </label>
 
-<form action="#" class="registerForm">
-    <label>
-        <input type="text" name="pseudo" placeholder="Pseudo">
-    </label>
+        <label>
+            <input type="email" name="mail_address" placeholder="Adresse e-mail">
+        </label>
 
-    <label>
-        <input type="email" name="mail_address" placeholder="Adresse e-mail">
-    </label>
+        <label>
+            <input type="password" name="password" placeholder="Mot de passe">
+        </label>
 
-    <label>
-        <input type="password" name="password" placeholder="Mot de passe">
-    </label>
+        <label>
+            <input type="text" name="firstname" placeholder="Prénom">
+        </label>
 
-    <label>
-        <input type="text" name="firstname" placeholder="Prénom">
-    </label>
+        <label>
+            <input type="text" name="name" placeholder="Nom de famille">
+        </label>
 
-    <label>
-        <input type="text" name="name" placeholder="Nom de famille">
-    </label>
+        <label>
+            <input type="date" name="date_of_birth" placeholder="Date de naissance">
+        </label>
 
-    <label>
-        <input type="date" name="date_of_birth" placeholder="Date de naissance">
-    </label>
+        <label>
+            <input type="file" name="profile_picture" placeholder="Photo de profil">
+        </label>
 
-    <label>
-        <input type="file" name="profile_picture" placeholder="Photo de profil">
-    </label>
+        <label>
+            <input type="submit" name="profile_picture" value="Inscription">
+        </label>
+    </form>
+</div>
 
-    <label>
-        <input type="submit" name="profile_picture" value="Inscription">
-    </label>
-</form>
 
 <script src="scripts/login.js" type="module"></script>
 </body>

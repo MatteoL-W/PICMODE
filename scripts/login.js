@@ -16,7 +16,7 @@ function loginFormHandling() {
                 sessionStorage.setItem('fashion_token', results);
                 location.assign('/S2_PHP/home');
             } else {
-                alert("didnt login")
+                alert("Vos identifiants sont erronés")
             }
         })
     })
@@ -34,7 +34,7 @@ function registerFormHandling() {
 
         const base64picture = await toBase64(form.profile_picture).catch(e => Error(e));
         if (!base64picture instanceof Error) {
-            alert("pdp marche po");
+            alert("The BASE64 translations didn't work");
             return;
         }
 
@@ -48,9 +48,9 @@ function registerFormHandling() {
             profile_picture: base64picture
         }).then(results => {
             if (results) {
-                alert("wp! login now!");
+                alert("Vous avez créer votre compte ! Vous pouvez à présent vous connecter");
             } else {
-                alert("didnt register")
+                alert("L'enregistrement de votre compte n'a pas fonctionné. Vérifiez vos entrées, elles doivent toute être complètes")
             }
         })
     })
