@@ -71,7 +71,7 @@ class PostController
             return;
         }
 
-        $this->read();
+        $this->getAllPosts();
     }
 
     public function update(int $id): void
@@ -79,14 +79,14 @@ class PostController
         $data = json_decode(file_get_contents("php://input"));
 
         if ($this->post->update($id, $data)) {
-            $this->read();
+            $this->getAllPosts();
         }
     }
 
     public function delete(int $id): void
     {
         if ($this->post->delete($id)) {
-            $this->read();
+            $this->getAllPosts();
         }
     }
 }

@@ -26,20 +26,21 @@ window.addEventListener('DOMContentLoaded', () => {
         }).then(response => {
             if (response) {
                 clear('.section');
+                console.log("post clear")
+                console.log(response)
                 displayPosts(response, '.section');
             }
         })
-
-
     });
 
     // Fil d'actualité
     useFetch('/S2_PHP/api/post/getAllPosts/', 'GET')
         .then(response => {
             // Quand on récupère les résultats, on les affiche
+            console.log("pre clear")
+            console.log(response)
             displayPosts(response, '.section');
         })
-
     header();
 
 });

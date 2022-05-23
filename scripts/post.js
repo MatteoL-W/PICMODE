@@ -1,6 +1,6 @@
 import {useFetch} from "./modules/fetchTools.js";
 import {generatePostHtml} from "./modules/postTools";
-import {header, needToLogin} from "./modules/tools";
+import {clear, header, needToLogin} from "./modules/tools";
 
 window.addEventListener('DOMContentLoaded', () => {
     header();
@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // get info of the post
     useFetch('/S2_PHP/api/post/' + postId, 'GET')
         .then(response => {
-            displayPost(response, '.section');
+            displayPost(response, '.postPage');
         })
 
     // Display the clothes list
@@ -45,8 +45,6 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
 
-    // Display the tags
-    let tagsList = document.querySelector('.tagsList')
 
     // Link a clothe to a post
     let linkForm = document.querySelector('.link-clothing')
@@ -66,7 +64,15 @@ window.addEventListener('DOMContentLoaded', () => {
             idClothing: form.clothes
         }).then(response => {
             if (response) {
-                // refresh clothes list
+                clear('.clothesList');
+                useFetch('/S2_PHP/api/clothing/getFromPost/' + postId, 'GET')
+                    .then(response => {
+                        for (let i = 0; i < response.length; i++) {
+                            let li = document.createElement('li');
+                            li.appendChild(document.createTextNode(response[i].type));
+                            clothesList.appendChild(li);
+                        }
+                    })
             }
         })
     });

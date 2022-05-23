@@ -64,42 +64,19 @@ body {
   font-family: "Segoe UI";
   src: url("/assets/font/segeoui.ttf") format("ttf"); }
 
-main {
+main.loginPage {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  /* profile section */ }
-  main section {
+  align-items: center; }
+  main.loginPage h1 {
+    margin-bottom: 20px;
+    margin-top: 20px; }
+  main.loginPage .loginForm, main.loginPage .registerForm {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 100vw; }
-    main section .clothe {
-      width: 70%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between; }
-      main section .clothe .clothe-picture {
-        display: flex;
-        justify-content: flex-start;
-        width: 60%; }
-        main section .clothe .clothe-picture img {
-          object-fit: cover;
-          margin-top: 10vh;
-          margin-bottom: 10vh;
-          margin-right: 10%;
-          width: 100%; }
-      main section .clothe .clothe-description {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly; }
-        main section .clothe .clothe-description h1 {
-          margin-bottom: 2rem; }
-
-.add-clothing {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px; }
-  .add-clothing input {
-    width: 100%; }
+    align-items: center;
+    flex-wrap: wrap; }
+    main.loginPage .loginForm input, main.loginPage .registerForm input {
+      margin-left: 20px; }

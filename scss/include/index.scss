@@ -62,34 +62,6 @@ body {
   src: url("/assets/font/segeoui.ttf") format("ttf"),
 }
 
-.loginPage {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h1 {
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-
-  .loginForm, .registerForm {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-
-
-
-
-
-
-
-
 
 
 

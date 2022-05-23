@@ -64,21 +64,6 @@ body {
   font-family: "Segoe UI";
   src: url("/assets/font/segeoui.ttf") format("ttf"); }
 
-.loginPage {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-  .loginPage h1 {
-    margin-bottom: 20px;
-    margin-top: 20px; }
-  .loginPage .loginForm, .loginPage .registerForm {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap; }
-
 /* posts section */
 .section {
   display: flex;
@@ -96,7 +81,9 @@ body {
   border: 1px solid #AA1B2D;
   margin: 1vw 1vh; }
   .post .content img {
-    width: 100%; }
+    width: 100%;
+    height: 400px;
+    object-fit: cover; }
   .post .head {
     display: flex;
     flex-direction: row;
@@ -149,6 +136,18 @@ body {
           width: 1.5vw; }
   .post .description {
     margin: 2vh 1vw; }
+
+.postPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .postPage .post {
+    width: 40%; }
+
+.infos-clothe {
+  display: flex;
+  flex-direction: column; }
 
 /* button */
 .add_content {
