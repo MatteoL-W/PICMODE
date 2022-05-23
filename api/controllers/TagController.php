@@ -24,6 +24,11 @@ class TagController
         return_json(json_encode($tag));
     }
 
+    public function getTagFromIdPost(int $id) {
+        $tag = $this->tag->getTagFromIdPost($id);
+        return_json(json_encode($tag));
+    }
+
     public function create(): void
     {
         $data = json_decode(file_get_contents("php://input"));

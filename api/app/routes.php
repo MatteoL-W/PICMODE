@@ -41,6 +41,7 @@ $router[] = ['/comment/{id}/', ['controller' => 'Comment', 'action' => 'delete',
 
 $router[] = ['/tag/', ['controller' => 'Tag', 'action' => 'read', 'method' => 'get', 'desc' => 'Return all tags']];
 $router[] = ['/tag/{id}/', ['controller' => 'Tag', 'action' => 'read', 'method' => 'get', 'desc' => 'Return a single tag']];
+$router[] = ['/tag/getTagFromIdPost/{id}/', ['controller' => 'Tag', 'action' => 'getTagFromIdPost', 'method' => 'get', 'desc' => 'Return tags of an idPost']];
 $router[] = ['/tag/', ['controller' => 'Tag', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new tag<span>{name}</span>']];
 $router[] = ['/tag/{id}/', ['controller' => 'Tag', 'action' => 'update', 'method' => 'put', 'desc' => 'Update a tag<span>you can update one or more fields (see above)</span>']];
 $router[] = ['/tag/{id}/', ['controller' => 'Tag', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a tag']];

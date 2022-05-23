@@ -45,6 +45,16 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
 
+    // Display the tags
+    let tagsList = document.querySelector('.tagsList')
+    useFetch('/S2_PHP/api/tag/getTagFromIdPost/' + postId, 'GET')
+        .then(response => {
+            for (let i = 0; i < response.length; i++) {
+                let li = document.createElement('li');
+                li.appendChild(document.createTextNode(response[i].name));
+                tagsList.appendChild(li);
+            }
+        })
 
     // Link a clothe to a post
     let linkForm = document.querySelector('.link-clothing')

@@ -3,6 +3,7 @@ import {header, needToLogin} from "./modules/tools";
 
 window.addEventListener('DOMContentLoaded', () => {
     needToLogin();
+    header();
     let clotheForm = document.querySelector('.add-clothing')
     let selector = document.querySelector('.add-clothing select')
 
@@ -41,7 +42,5 @@ window.addEventListener('DOMContentLoaded', () => {
                 alert("c'est créer!")
             }
         })
-
-        header();
     });
 });

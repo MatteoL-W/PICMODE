@@ -1,9 +1,10 @@
-import {toBase64, useFetch} from "./modules/fetchTools.js";
-import {clear, getDate, header, needToLogin} from "./modules/tools";
-import {displayPosts} from "./modules/postTools";
+import {useFetch} from "./modules/fetchTools.js";
+import {header, needToLogin} from "./modules/tools";
 
 window.addEventListener('DOMContentLoaded', () => {
     needToLogin();
+
+    header();
     let tagForm = document.querySelector('.add-tag')
     tagForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -22,7 +23,5 @@ window.addEventListener('DOMContentLoaded', () => {
                 location.assign('/S2_PHP/createClothe');
             }
         })
-
-        header();
     });
 });
