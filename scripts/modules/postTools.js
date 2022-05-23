@@ -1,6 +1,7 @@
 import {createDiv, createElementAndText, createImage} from "./htmlTools.js"
 
 export function displayPosts(posts, selector) {
+    console.log(posts)
     for (let i = 0; i < posts.length; i++) {
         let post = generatePostHtml(posts[i])
         document.querySelector(selector).appendChild(post);
@@ -38,6 +39,7 @@ export function generatePostHtml(post) {
     const content = document.createElement('a');
     content.classList.add('content')
     if (!window.location.href.includes('postId')) {
+        console.log(post)
         content.setAttribute('href', '/S2_PHP/post?postId=' + post.id)
     }
 

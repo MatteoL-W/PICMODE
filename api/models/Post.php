@@ -21,12 +21,10 @@ class Post extends BaseModel
         return $this->db->fetch();
     }
 
-
-
     //Méthode pour selectionner tous les posts d'un User
     public function selectAllPostsFromUserId(int $idUser)
     {
-        $this->db->query("SELECT * FROM post INNER JOIN user ON post.idUser = user.id WHERE idUser = :id ORDER BY date DESC");
+        $this->db->query("SELECT post.id, post.description, post.picture, post.date, user.pseudo, user.profile_picture FROM post INNER JOIN user ON post.idUser = user.id WHERE idUser = :id ORDER BY date DESC");
         $this->db->bind(':id', $idUser);
         return $this->db->fetchAll();
     }

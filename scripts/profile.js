@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     useFetch('/S2_PHP/api/post/getAllPostsFromUserId/' + userId, 'GET')
         .then(response => {
+            console.log(response)
             displayPosts(response, '.section');
         })
 

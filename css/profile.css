@@ -84,6 +84,8 @@ body {
     width: 100%;
     height: 400px;
     object-fit: cover; }
+  .post .content p {
+    padding: 15px; }
   .post .head {
     display: flex;
     flex-direction: row;
