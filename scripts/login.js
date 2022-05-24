@@ -14,7 +14,7 @@ function loginFormHandling() {
         }).then(results => {
             if (results) {
                 sessionStorage.setItem('fashion_token', results);
-                location.assign('/S2_PHP/home');
+                location.assign('/S2_PHP/home.html');
             } else {
                 alert("Vos identifiants sont erronés")
             }
@@ -58,7 +58,7 @@ function registerFormHandling() {
 
 window.addEventListener('DOMContentLoaded', () => {
     if (sessionStorage.getItem('fashion_token')) {
-        location.assign('/S2_PHP/home');
+        location.assign('/S2_PHP/home.html');
     }
 
     loginFormHandling();

@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
             name: form.name
         }).then(response => {
             if (response) {
-                location.assign('/S2_PHP/createClothe');
+                location.assign('/S2_PHP/createClothe.html');
             }
         })
     });
