@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
             idTag: form.tag
         }).then(response => {
             if (response) {
-                alert("c'est créer!")
+                alert("c'est créée!")
             }
         })
     });
