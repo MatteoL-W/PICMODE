@@ -43,7 +43,11 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(response => {
             for (let i = 0; i < response.length; i++) {
                 let li = document.createElement('li');
-                li.appendChild(document.createTextNode(response[i].type));
+                li.appendChild(document.createTextNode(response[i].type + " from "));
+                let shopLink = document.createElement('a')
+                shopLink.setAttribute('href', response[i].url_shop)
+                shopLink.appendChild(document.createTextNode(response[i].store))
+                li.appendChild(shopLink)
                 clothesList.appendChild(li);
             }
         })
@@ -86,7 +90,11 @@ window.addEventListener('DOMContentLoaded', () => {
                     .then(response => {
                         for (let i = 0; i < response.length; i++) {
                             let li = document.createElement('li');
-                            li.appendChild(document.createTextNode(response[i].type));
+                            li.appendChild(document.createTextNode(response[i].type + " from "));
+                            let shopLink = document.createElement('a')
+                            shopLink.setAttribute('href', response[i].url_shop)
+                            shopLink.appendChild(document.createTextNode(response[i].store))
+                            li.appendChild(shopLink)
                             clothesList.appendChild(li);
                         }
                     })
