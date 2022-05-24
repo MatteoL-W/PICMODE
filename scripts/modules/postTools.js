@@ -40,7 +40,7 @@ export function generatePostHtml(post) {
     content.classList.add('content')
     if (!window.location.href.includes('postId')) {
         console.log(post)
-        content.setAttribute('href', '/S2_PHP/post?postId=' + post.id)
+        content.setAttribute('href', '/S2_PHP/post.html?postId=' + post.id)
     }
 
     card.appendChild(head);

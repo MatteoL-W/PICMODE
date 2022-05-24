@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(response => {
             for (let i = 0; i < response.length; i++) {
                 let link = document.createElement('a');
-                link.setAttribute('href', '/S2_PHP/tag?tagId=' + response[i].id)
+                link.setAttribute('href', '/S2_PHP/tag.html?tagId=' + response[i].id)
                 let li = document.createElement('li');
                 li.appendChild(document.createTextNode(response[i].name))
                 link.appendChild(li)

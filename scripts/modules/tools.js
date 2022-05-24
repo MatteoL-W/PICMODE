@@ -32,7 +32,7 @@ export function header() {
 export function needToLogin() {
     if (!sessionStorage.getItem('fashion_token')) {
         alert("you must login")
-        window.location.href = "/S2_PHP/login";
+        window.location.href = "/S2_PHP/login.html";
         return
     }
 }
