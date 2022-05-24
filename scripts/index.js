@@ -1,1 +1,1 @@
-import {useFetch} from "./modules/fetchTools";
+import {useFetch} from "./modules/fetchTools.js";

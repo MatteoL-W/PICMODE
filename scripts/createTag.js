@@ -1,5 +1,5 @@
 import {useFetch} from "./modules/fetchTools.js";
-import {header, needToLogin} from "./modules/tools";
+import {header, needToLogin} from "./modules/tools.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     needToLogin();

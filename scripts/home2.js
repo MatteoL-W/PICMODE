@@ -1,6 +1,6 @@
 import {toBase64, useFetch} from "./modules/fetchTools.js";
 import {displayPosts} from "./modules/postTools.js";
-import {clear, getDate, header, needToLogin} from "./modules/tools";
+import {clear, getDate, header, needToLogin} from "./modules/tools.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     needToLogin();

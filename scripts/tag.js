@@ -1,7 +1,7 @@
 import {toBase64, useFetch} from "./modules/fetchTools.js";
 import {displayPosts} from "./modules/postTools.js";
-import {clear, getDate, header, needToLogin} from "./modules/tools";
-import {createImage} from "./modules/htmlTools";
+import {clear, getDate, header, needToLogin} from "./modules/tools.js";
+import {createImage} from "./modules/htmlTools.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     needToLogin();

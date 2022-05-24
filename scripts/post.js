@@ -1,6 +1,6 @@
 import {useFetch} from "./modules/fetchTools.js";
-import {generatePostHtml} from "./modules/postTools";
-import {clear, header, needToLogin} from "./modules/tools";
+import {generatePostHtml} from "./modules/postTools.js";
+import {clear, header, needToLogin} from "./modules/tools.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     header();
@@ -32,7 +32,6 @@ window.addEventListener('DOMContentLoaded', () => {
     useFetch('/S2_PHP/api/post/' + postId, 'GET')
         .then(response => {
             displayPost(response, '.postPage');
-            console.log(response)
             if (response.idUser != sessionStorage.getItem('fashion_token')) {
                 document.querySelector('.link-clothing').style.display = 'none';
             }

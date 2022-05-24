@@ -1,4 +1,4 @@
-import {useFetch} from "./fetchTools";
+import {useFetch} from "./fetchTools.js";
 
 /**
  * @brief Get Y-m-d current date
