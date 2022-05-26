@@ -24,7 +24,7 @@ $router[] = ['/clothing/{id}/', ['controller' => 'Clothing', 'action' => 'delete
 $router[] = ['/post/', ['controller' => 'Post', 'action' => 'read', 'method' => 'get', 'desc' => 'Return all posts']];
 $router[] = ['/post/getAllPosts/', ['controller' => 'Post', 'action' => 'getAllPosts', 'method' => 'get', 'desc' => 'Return all posts with the user who posted it']];
 $router[] = ['/post/{id}/', ['controller' => 'Post', 'action' => 'read', 'method' => 'get', 'desc' => 'Return a single post']];
-$router[] = ['/post/getLoggedPosts/{id}/', ['controller' => 'Post', 'action' => 'getLoggedPosts', 'method' => 'get', 'desc' => 'Get all posts only published by people followed (with the user s id who published it)']];
+$router[] = ['/post/getLoggedPosts/{id}/', ['controller' => 'Post', 'action' => 'getLoggedPosts', 'method' => 'get', 'desc' => 'Get all posts only published by people followed (with the user id of who published it)']];
 $router[] = ['/post/getAllPostsFromUserId/{id}/', ['controller' => 'Post', 'action' => 'getAllPostsFromUserId', 'method' => 'get', 'desc' => 'Return all posts of an user']];
 $router[] = ['/post/getAllPostsFromTagId/{id}/', ['controller' => 'Post', 'action' => 'getAllPostsFromTagId', 'method' => 'get', 'desc' => 'Get all the posts with a specific tag']];
 $router[] = ['/post/countPosts/{id}/', ['controller' => 'Post', 'action' => 'countPosts', 'method' => 'get', 'desc' => 'Return the number of posts of an user']];
@@ -58,15 +58,15 @@ $router[] = ['/contains/', ['controller' => 'Contains', 'action' => 'read', 'met
 $router[] = ['/contains/getClothing/{id}/', ['controller' => 'Contains', 'action' => 'getClothing', 'method' => 'get', 'desc' => 'Return the clothings of a post']];
 $router[] = ['/contains/countClothing/{id}/', ['controller' => 'Contains', 'action' => 'countClothing', 'method' => 'get', 'desc' => 'Return the number of clothings of a post']];
 $router[] = ['/contains/', ['controller' => 'Contains', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new contains<span>{idPost, idClothing}</span>']];
-$router[] = ['/contains/{id}/{id2}/', ['controller' => 'Contains', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a contains<br>(id = idPost ; id2 = idClothing)']];
+$router[] = ['/contains/{id}/{id2}/', ['controller' => 'Contains', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a contains<span>{id = idPost ; id2 = idClothing}<span>']];
 
 $router[] = ['/like/', ['controller' => 'Like', 'action' => 'read', 'method' => 'get', 'desc' => 'Return all the likes']];
 $router[] = ['/like/getLikes/{id}/', ['controller' => 'Like', 'action' => 'getLikes', 'method' => 'get', 'desc' => 'Get all the likes of a user']];
 $router[] = ['/like/getLikers/{id}/', ['controller' => 'Like', 'action' => 'getLikers', 'method' => 'get', 'desc' => 'Get all the likers of a post']];
 $router[] = ['/like/countLikes/{id}/', ['controller' => 'Like', 'action' => 'countLikes', 'method' => 'get', 'desc' => 'Count all the likes of a user']];
 $router[] = ['/like/countLikers/{id}/', ['controller' => 'Like', 'action' => 'countLikers', 'method' => 'get', 'desc' => 'Count the likers of a post']];
-$router[] = ['/like/', ['controller' => 'Like', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new like<br>(send idUser and idPost in query)']];
-$router[] = ['/like/{id}/{id2}/', ['controller' => 'Like', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a Like<br>(id = idUser ; id2 = idPost)']];
+$router[] = ['/like/', ['controller' => 'Like', 'action' => 'create', 'method' => 'post', 'desc' => 'Create a new like<span>{idUser, idPost}</span>']];
+$router[] = ['/like/{id}/{id2}/', ['controller' => 'Like', 'action' => 'delete', 'method' => 'delete', 'desc' => 'Delete a Like<span>{id = idUser ; id2 = idPost}</span>']];
 
 
 
