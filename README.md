@@ -5,7 +5,7 @@
 1. Be sure that you have PHP >= 8.0 installed
 2. Install https://nodejs.org/en/download/
 3. Install https://getcomposer.org/download/
-4. Place the repository in your server (wamp64/www/S2_PHP). Be sure that your link is starting with S2_PHP.
+4. Place the repository in your server (wamp64/www/S2_PHP). Be sure that your link is starting with S2_PHP (https://matteo-leclercq.fr/S2_PHP/index.html for example).
 5. Start with a `npm install` to install the node_modules folder
 6. Then go into your api folder and install composer dependencies with a `cd api; composer install` to install the vendor folder
 7. Change `api/config/credentials.php` to match your database password.

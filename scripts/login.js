@@ -48,7 +48,7 @@ function registerFormHandling() {
             profile_picture: base64picture
         }).then(results => {
             if (results) {
-                alert("Vous avez créer votre compte ! Vous pouvez à présent vous connecter");
+                alert("Vous avez créé votre compte ! Vous pouvez à présent vous connecter");
             } else {
                 alert("L'enregistrement de votre compte n'a pas fonctionné. Vérifiez vos entrées, elles doivent toute être complètes")
             }

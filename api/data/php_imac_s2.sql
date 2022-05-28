@@ -223,7 +223,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `pseudo`, `mail_address`, `password`, `date_of_birth`, `name`, `firstname`, `profile_picture`) VALUES
-(1, 'MiamMatt', 'matteo@gmail.com', 'OnePiece', '2001-10-09', 'matteo', 'leclerq', 'photo'),
 (3, 'Doe77', 'johndoe77@hotmail.fr', '$2y$10$GpyfBENx7/EgS/yg1e.CFu4F1K1Z1CYmuaqc3p5KThQIEZr7BGBH.', '1985-01-19', 'Doe', 'John', '/public/upload/user/628fe9b36325e.jpeg'),
 (4, 'Lisa22', 'lisapierre22@free.fr', '$2y$10$FkQaq7pcEDf0ZDnVkyFnxOgVPJ/v6LD4Psj2GlHQ1iqgWWsQOlYg6', '1994-05-30', 'Pierre', 'Lisa', '/public/upload/user/628feb0248a0e.jpeg'),
 (5, 'Fabou', 'fabienbenoit@gmail.com', '$2y$10$vgH0zoBsGzRdFLe8QQTrd.HuK1uIDZSIM80vJvZElp4sbyEWh6/2i', '1981-11-16', 'Benoit', 'Fabien', '/public/upload/user/628feb7fe1557.jpeg'),
