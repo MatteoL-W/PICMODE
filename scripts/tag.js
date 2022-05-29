@@ -15,6 +15,11 @@ window.addEventListener('DOMContentLoaded', () => {
         alert("merci de sélectionner un tag / http://localhost/S2_PHP/profile.html?tagId=3 par exemple");
     }
 
+    useFetch('/S2_PHP/api/tag/' + tagId, 'GET')
+        .then(response => {
+            document.querySelector('h1').innerText = "Tag : " + response.name;
+        })
+
     // Fil d'actualité
     useFetch('/S2_PHP/api/post/getAllPostsFromTagId/' + tagId, 'GET')
         .then(response => {
