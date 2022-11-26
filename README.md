@@ -1,5 +1,8 @@
 # S2_PHP / Vanilla PHP API project
 
+## The front-end part is not achieved and was not the purpose of this project.
+Our goal was to create a functional Vanilla PHP API, which we did. It also includes an auto-generated documentation.
+
 ## How to install ?
 
 1. Be sure that you have PHP >= 8.0 installed
